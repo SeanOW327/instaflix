@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Libre+Baskerville:wght@700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+/* ---------------------------------------- */
+/* Global Styles */
+
+/* Fonts */
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+}
+
+/* Spacing */
+.full-height {
+    height: 100vh;
+}
+
+/* ---------------------------------------- */
+/* Components */
+body {
+  background-color: #F0F8FF;
+}
+button {
+    border: none;
+    padding: 16px 20px;
+    border-radius: 5px;
+    background: #1f4850;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    color: white;
+    
+}
+
+/* ---------------------------------------- */
+/* Bootstrap Component Overrides */
+
+/* Style the overall navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+  padding: 10px 20px; 
+}
+
+/* Style the logo on the left */
+.navbar-logo img {
+  max-height: 50px;
+}
+
+/* Style the navigation links in the center */
+.navbar-center {
+  text-align: center;
+}
+
+.navbar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links li {
+  display: inline;
+  margin-right: 20px; 
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: #050505;
+}
+
+/* Style the search box and sign-up button on the right */
+.navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  margin-right: 20px;
+}
+
+
+
+.search-box button[type="submit"] {
+  padding: 5px 10px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.signup-button {
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+
+.shopping-bag {
+  padding: 10px 5px;
+  padding-right: 10px;
+}
+.shopping-bag a {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+.shopping-bag a img {
+  width: 15px;
+  height: 2px;
+  padding-right: 10px;
+}
+
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* Create the header with a background image */
+.header {
+  position: relative; 
+  background-image: url('assets/movie.jpg'); 
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+  color: #000000; 
+  opacity: 0.8; 
+}
+
+/* Style the content inside the header */
+.header-content {
+  background-color: rgba(248, 245, 245, 0.9); 
+  padding: 20px;
+  border-radius: 10px; 
+  position: absolute; 
+  bottom: 100px;
+  left: 40px; 
+}
+
+.header-content h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.header-content p {
+  font-size: 18px;
+  margin: 0;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px; 
+}
+
+.watch-now-button,
+.watch-list-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 10px; 
+}
+
+.watch-now-button:hover,
+.watch-list-button:hover {
+  background-color: #0056b3; 
+}
+
+img{
+  width: 100%;
+  display: block;
+}
+.result-container{
+  padding: 3rem 0;
+}
+.movie-poster img{
+  max-width: 300px;
+  margin-right: 1rem; 
+  border: 4px solid #fff;
+}
+.movie-info{
+  text-align: center;*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            
+}
+  color: #010101;
+ padding-bottom: 4rem;
+}
+
+
+.movie-container {
+  display: flex; 
+  align-items: flex-start; 
+  margin-bottom: 20px; 
+}
+
+.movie-poster img {
+  max-width: 200px; 
+  margin-right: 20px; 
+}
+
+.movie-info {
+  flex-grow: 1;
+}
+
+
+
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; 
+  color: #fff; 
+  padding: 10px 20px; 
+}
+
+
+.footer-left img {
+  max-height: 30px; 
+}
+
+
+.footer-middle p {
+  margin: 0;
+  font-size: 14px;
+}
+
+
+.footer-right a {
+  color: #fff; 
+  text-decoration: none;
+  margin-left: 10px; 
+  font-size: 18px; 
+}
+
+
+.footer-right a:hover {
+  color: #007bff; 
+}
+
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.footer-links li {
+  display: inline-block;
+  margin-right: 10px; 
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+
+.buttons {
+  display: flex;
+  justify-content: center; 
+  margin-top: 20px; 
+}
+
+.play-trailer-button,
+.location-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.play-trailer-button:hover,
+.location-button:hover {
+  background-color: #0056b3; 
+}
+
+
+
+.movie-title{
+  font-size: 2rem;
+  color: var(--yellow-color);
+}
+.movie-misc-info{
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem;
+}
+.movie-info .year{
+  font-weight: 500;
+}
+.movie-info .rated{
+  background-color: var(--yellow-color);
+  padding: 0.4rem;
+  margin: 0 0.4rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.movie-info .released{
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.movie-info .writer{
+  padding: 0.5rem;
+  margin: 1rem 0;
+}
+.movie-info .genre{
+  background-color: var(--light-dark-color);
+  display: inline-block;
+  padding: 0.5rem;
+  border-radius: 3px;
+}
+.movie-info .plot{
+  max-width: 400px;
+  margin: 1rem auto;
+}
+.movie-info .language{
+  color: var(--yellow-color);
+  font-style: italic;
+}
+.movie-info .awards{
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+.movie-info .awards i{
+  color: var(--yellow-color);
+  margin: 1rem 0.7rem 0 0;
+}
+
+
+
+/* Navigation */
+.container{
+  padding-right: 60px;
+
+}
+.nav-link {
+    font-family: 'Lato', sans-serif;
+    color: rgba(0, 0, 0, 0.60);
+    
+
+}
+
+.nav-link:hover {
+    color: #076993;
+    
+}
+
+.nav-link.active {
+    border-bottom: 2px solid #033c54;
+    color: #077bad;
+}
+
+.navbar-brand {
+  width: 60px;
+
+
+  padding: 10px;
+}
+
+
+.shopping-bag {
+  padding: 10px 5px;
+  padding-right: 10px;
+}
+.shopping-bag a {
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+}
+.shopping-bag a img {
+  width: 32px;
+  height: 32px;
+  padding-right: 10px;
+}
+.shopping-bag .total-ticket-in-cart {
+  margin-left: 10px;
+  padding: 5px;
+  background-color: rgb(242, 255, 58);
+  border-radius: 5px;
+}
+
+
