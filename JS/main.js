@@ -1,0 +1,1 @@
+$carousel-caption-color:             $white;

@@ -15,6 +15,79 @@ h1 {
 
 
   /* ---------WATCHLIST STYLING------- */
+h3 {
+    font-size: 20px;
+}
+
+@media (min-width: 768px) {
+    h3{
+        font-size: 25px;
+    }
+}
+
+@media (min-width: 1200px) {
+    h3{
+        font-size: 28px;
+    }
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 15px;
+  }
+  
+  .card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-body {
+    flex-grow: 1; /* Allow the card body to grow to fill the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Vertically align content to the bottom */
+  }
+  
+  .card-body h5 {
+    margin: 0; /* Remove any default margin */
+  }
+
+.btn-primary1{
+    background-color: #034C96;
+  }
+
+  .carousel-caption p,
+  .carousel-caption .btn {
+    margin-bottom: 50px;
+  }
+
+
+  @media (max-width: 768px) {
+    .carousel-caption h1 {
+      font-size: 20px;
+    }
+    .carousel-caption p {
+      font-size: 16px;
+      margin-bottom: 16px; /* Space under the paragraph */
+    }
+    .carousel-caption .btn {
+      font-size: 14px;
+      padding: 5px 10px;
+      margin-top: 5px;
+      margin-bottom: -10px; /* Space above the buttons */
+    }
+
+  }
+
+  .text-viewer{
+    color: rgba(255, 255, 255, 0.582);
+    
+  }
+
+
+  /* ---------------------------------------- */
 /* Global Styles */
 
 body{
@@ -149,6 +222,10 @@ a{
     height: 50px;
     border: white solid 2px;
     border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .flexbox{
@@ -163,3 +240,7 @@ a{
     height: 3px;
     background: linear-gradient(90deg, rgba(217, 217, 217, 0.00) 0.19%, #D9D9D9 55.19%, rgba(0, 0, 0, 0.00) 100%);
 }
+ 
+
+  
+  
