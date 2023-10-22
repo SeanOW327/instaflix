@@ -58,6 +58,7 @@
     left: 10px;
     transition: ease;
     transition-duration: 200ms;
+    border: none;
 }
 
 .add-lib-btn:hover{
