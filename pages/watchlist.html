@@ -57,19 +57,19 @@
     <div class="section-padding">
       <div class="container-xxl">
         <div class="row library-heading">
-          <h1>Watch list</h1>
+          <h1 id="test-button" >Watch list</h1>
         </div>
         
         <!-- Movie cards -->
         <div id="movies-container" class="row movies-list">
-          <template id="movieTemplate">
+          <template id="movieListTemplate">
             <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
               <div class="movie-card">
                 <button id="wishlist-button" href="" class="add-lib-btn" >
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="4.375" width="1.25" height="10" fill="white"/>
-                    <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
-                  </svg>
+                    <svg width="35" height="35" viewBox="0 0 35 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="35" height="35" rx="5" fill="#818489"/>
+                        <rect x="13" y="17.625" width="1.25" height="10" transform="rotate(-90 13 17.625)" fill="white"/>
+                        </svg>
                 </button>
                 <div>
                   <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
@@ -171,7 +171,7 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
    <!-- Local Script -->
-   <script src="../scripts/movie-library.js"></script>
+   <script src="../scripts/watch-list.js"></script>
 
   </body>
 </html>
