@@ -87,13 +87,13 @@ const options = {
     }
   };
   
-  fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+  const apiCallPromise = fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
     .then(response => response.json())
     .then(data => {
         genreArray = data;  
       })
     .catch(err => console.error(err));
-
+console.log(genreArray)
 
 // ---------------------------------------------------------------------------
 // Load movies
@@ -104,12 +104,15 @@ function loadWatchList() {
         movieContainer.innerHTML = defaultContainer;
         for (let i = 0; i < watchListArray.length; i++) {
             $("#movies-container").append($("#movieTemplate").html());
+
             let movieGenres = [];
             for(let j = 0; j < watchListArray[i].genres.length; j++){
                 for(let k = 0; k < genreArray.genres.length; k++){
-                    
-                    if(genreArray.genres[k].id === watchListArray[i].genres[j]){
+
+                    if(genreArray.genres[k].id === watchListArray[i].genres[j].id){
+                       
                         movieGenres.push(genreArray.genres[k].name)
+                        
                     }
                 }
             }
@@ -129,32 +132,20 @@ function loadWatchList() {
         $(currentChild).find("#wishlist-button").attr("id", watchListArray[i].id);
       }
     }
-$("#test-button").on("click", loadWatchList);
+apiCallPromise.then(() => {
+    loadWatchList();
+    console.log(genreArray)
+});
 
    
+    // ---------------------------------------------------------------------------
+    // Remove from watch list
+    let updatedList;
 
-}); // close document ready
-
-
-// ---------------------------------------------------------------------------
-// Remove from watch list
-
-
-$(document).ready(function() {
-
-
-  $(document).on("click", ".add-lib-btn", function() {
+  $(document).on("click", ".rem-lib-btn", function() {
     let buttonId = $(this).attr("id");
-    var isDuplicate = false;
-    for(let i = 0; i < watchList.length; i++){
-      if(buttonId === watchList[i]){
-        isDuplicate = true;
-      } 
-    }
-    
-    if(isDuplicate === false){
 
-      let movieResult;
+    let movieResult;
 
       const options = {
         method: 'GET',
@@ -172,18 +163,24 @@ $(document).ready(function() {
         .catch(err => console.error(err));
 
       apiCallPromise.then(() => {
-        watchList.push(buttonId)
+        updatedList = watchList.filter(item => item !== buttonId);
+        watchList = updatedList;
         localStorage.setItem('watchlist', JSON.stringify(watchList));
-        alert("'" + movieResult.original_title + "'" + " has been added to watchlist!")
+        alert("'" + movieResult.original_title + "'" + " has been removed to watchlist!")
+        loadWatchList()
+        location.reload();
       });
     
-
-      
-    } else {
-      alert("Movie is already added!")
-    }
-    
   });
+
+}); // close document ready
+
+
+
+
+
+$(document).ready(function() {
+    
 });
 
 
