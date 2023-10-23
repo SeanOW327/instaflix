@@ -1,10 +1,12 @@
+// ---------------------------------------------------------------------------
+// Sewtting containers
 let movieContainer = document.getElementById("movies-container");
     let defaultContainer = `
     
     <template id="movieTemplate">
             <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
               <div class="movie-card">
-                <button id="wishlist-button" href="" class="add-lib-btn" onclick="addToWatchList()">
+                <button id="wishlist-button" href="" class="add-lib-btn" >
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="4.375" width="1.25" height="10" fill="white"/>
                     <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
@@ -36,6 +38,8 @@ let movieContainer = document.getElementById("movies-container");
 
   
 $(document).ready(function() {
+
+// ---------------------------------------------------------------------------
 // Fetch genres
     let genreArray = []; 
 
@@ -55,7 +59,7 @@ $(document).ready(function() {
         .catch(err => console.error(err));
 
 
-
+// ---------------------------------------------------------------------------
 // Fetch movie data
 
 let movieArray = []; 
@@ -141,16 +145,72 @@ let movieArray = [];
         loadMovies();
     });
 
+}); // close document ready
+
+
+// ---------------------------------------------------------------------------
+// Add to watch list
+  
+let watchList = JSON.parse(localStorage.getItem('watchlist')) || [];
+console.log(watchList)
+
+$(document).ready(function() {
+
+
+  $(document).on("click", ".add-lib-btn", function() {
+    let buttonId = $(this).attr("id");
+    var isDuplicate = false;
+    for(let i = 0; i < watchList.length; i++){
+      if(buttonId === watchList[i]){
+        isDuplicate = true;
+      } 
+    }
+    
+    if(isDuplicate === false){
+
+      let movieResult;
+
+      const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZmIyNzAwYzVhMjkxZTkyZGFlZTYyMjEyZTVlMjRmOCIsInN1YiI6IjY1MzRmNTUzMmIyMTA4MDExZGRmYTE5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aF-FMrsAtLTGS4ISe4FLhdLw9YJb0_xcdnNbLEZH--s'
+        }
+      };
+      
+      const apiCallPromise = fetch('https://api.themoviedb.org/3/movie/' + buttonId, options)
+        .then(response => response.json())
+        .then(data => {
+          movieResult = data;
+        })
+        .catch(err => console.error(err));
+
+      apiCallPromise.then(() => {
+        watchList.push(buttonId)
+        localStorage.setItem('watchlist', JSON.stringify(watchList));
+        alert("'" + movieResult.original_title + "'" + " has been added to watchlist!")
+      });
+    
+
+      
+    } else {
+      alert("Movie is already added!")
+    }
     
   });
-  
-  let watchList = JSON.parse(localStorage.getItem('watchlist')) || [];
+});
 
-function addToWatchList(){
-    alert("working!")
-    
-}
 
-  function watchListToLocalStorage(){
-    localStorage.setItem('watchlist', JSON.stringify(watchlist));
-  }
+// ---------------------------------------------------------------------------
+// Filter by genre
+
+$(document).ready(function() {
+  const dropdown = $('#dropdown');
+
+  options.forEach(option => {
+    dropdown.append($('<option>', {
+      value: option.value,
+      text: option.text
+    }));
+  });
+});

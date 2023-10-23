@@ -38,7 +38,7 @@
         <a class="nav-link " aria-current="page" href="#" style="border-bottom: 2px solid #a4c9ba8d;color: white;">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" style="color: #a4c9bab6;">Watchlist</a>
+        <a class="nav-link" href="../pages/watchlist.html" style="color: #a4c9bab6;">Watchlist</a>
       </li>
       <li class="nav-item">
         <a class="nav-link active" href="#" style="color:#a4c9bab6 ;">Library</a>
@@ -73,6 +73,13 @@
             </ul>
           </div>
 
+          <select class="form-select " aria-label="Default select example">
+            <option selected>Genre</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+
           <div id="genre-filter" class="dropdown">
             <button class="btn btn-secondary dropdown-toggle filter-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               Year
@@ -101,7 +108,7 @@
           <template id="movieTemplate">
             <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
               <div class="movie-card">
-                <button id="wishlist-button" href="" class="add-lib-btn" onclick="addToWatchList()">
+                <button id="wishlist-button" href="" class="add-lib-btn" >
                   <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="4.375" width="1.25" height="10" fill="white"/>
                     <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
