@@ -21,7 +21,7 @@
 
 .movie-name{
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 400;
     color: white;
 }
 
@@ -58,12 +58,37 @@
     left: 10px;
     transition: ease;
     transition-duration: 200ms;
+    border: none;
+}
+
+.rem-lib-btn{
+    display: flex;
+    width: 35px;
+    height: 35px;
+    padding: 12px 12px 13px 13px;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background-color: #818489;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transition: ease;
+    transition-duration: 200ms;
+    border: none;
 }
 
 .add-lib-btn:hover{
     width: 180px;
     transition: ease;
     transition-duration: 200ms;
+}
+
+.rem-lib-btn:hover{
+    transition: ease;
+    transition-duration: 200ms;
+    background-color: #AB2E2E;
 }
 
 .movie-card-overlay{
