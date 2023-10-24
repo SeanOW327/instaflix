@@ -229,36 +229,6 @@ $(document).ready(function() {
 
 
 
-// // new code
-// // Function to add a movie to the watchlist and update the table
-// function addToWatchlistAndDisplayTable(movieData) {
-//   // Add the movie to the watchlist
-//   watchlist.push(movieData);
-
-//   // Store the updated watchlist in local storage
-//   localStorage.setItem('watchlist', JSON.stringify(watchlist));
-
-//   // Display the watchlist in the table
-//   displayWatchlistTable();
-
-//   // Show an alert when the movie is added to the watchlist
-//   alert('Movie added to your watchlist: ' + movieData.title);
-// }
-
-// // Function to display the watchlist in the table
-// function displayWatchlistTable() {
-//   var $watchlistTable = $('#watchlist-table tbody');
-//   $watchlistTable.empty(); // Clear the table before adding new items
-
-//   watchlist.forEach(function(movie) {
-//       var row = '<tr>';
-//       row += '<td>' + movie.title + '</td>';
-//       row += '<td>' + movie.overview + '</td>';
-//       row += '<td>' + movie.vote_average + '</td>';
-//       row += '</tr>';
-//       $watchlistTable.append(row);
-//   });
-// }
 
 
 
