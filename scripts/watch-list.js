@@ -190,3 +190,80 @@ $(document).ready(function() {
 // ---------------------------------------------------------------------------
 // Filter by genre
 
+
+
+// homepage add to wachlist
+  $(document).ready(function() {
+    // Array to store selected movie data
+    const watchlist = [];
+
+    // Click event for "Add to Watchlist" button
+    $("#movies-container").on("click", ".add-lib-btn", function() {
+      const movieCard = $(this).closest(".movie-card");
+
+      // Extract movie details from the clicked movie card
+      const movieTitle = movieCard.find(".movie-name").text();
+      const movieYear = movieCard.find("#movie-year").text();
+      const movieGenres = movieCard.find("#movie-genres").text();
+
+      // Create an object to represent the selected movie
+      const movieData = {
+        title: movieTitle,
+        year: movieYear,
+        genres: movieGenres,
+      };
+
+      // Add the movie to the watchlist array
+      watchlist.push(movieData);
+
+      // Update the Watchlist page (you need to implement this)
+      updateWatchlistTable();
+
+      // Optionally, you can save watchlist to local storage for persistence
+      localStorage.setItem("watchlist", JSON.stringify(watchlist));
+    });
+
+    // Function to update the Watchlist page (you need to implement this)
+    function updateWatchlistTable() {
+      // Implement this function to update the Watchlist table with the data from the watchlist array.
+      // You can use DOM manipulation to add rows to the table.
+    }
+  });
+
+
+
+// // new code
+// // Function to add a movie to the watchlist and update the table
+// function addToWatchlistAndDisplayTable(movieData) {
+//   // Add the movie to the watchlist
+//   watchlist.push(movieData);
+
+//   // Store the updated watchlist in local storage
+//   localStorage.setItem('watchlist', JSON.stringify(watchlist));
+
+//   // Display the watchlist in the table
+//   displayWatchlistTable();
+
+//   // Show an alert when the movie is added to the watchlist
+//   alert('Movie added to your watchlist: ' + movieData.title);
+// }
+
+// // Function to display the watchlist in the table
+// function displayWatchlistTable() {
+//   var $watchlistTable = $('#watchlist-table tbody');
+//   $watchlistTable.empty(); // Clear the table before adding new items
+
+//   watchlist.forEach(function(movie) {
+//       var row = '<tr>';
+//       row += '<td>' + movie.title + '</td>';
+//       row += '<td>' + movie.overview + '</td>';
+//       row += '<td>' + movie.vote_average + '</td>';
+//       row += '</tr>';
+//       $watchlistTable.append(row);
+//   });
+// }
+
+
+
+
+
