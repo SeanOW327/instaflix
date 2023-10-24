@@ -20,7 +20,7 @@
 
  <!--sign up form-->
 
- <form onsubmit="signInInfo(collect)">
+ <form onsubmit="signInInfo(collect)" onclick="myFunction()">
   <div class="mb-3">
  
     <div class="input-group">
@@ -38,7 +38,8 @@
         <input type="password" class="form-control" placeholder="Password" id="SiPassword" aria-describedby="inputGroupPrepend" required>
       </div>
     </div>
-    
+    <p id="demo" style="color: white; text-align: center;"></p>
+
       <div class="mb-3">
         
       <div class="input-group">
@@ -52,6 +53,7 @@
     <button type="submit" class="btn btn-primary" style="width:500px;">Submit</button> 
     <div id="emailHelp" class="form-text" style="color: white; text-align: center;">Already have an account? Click here to <a href="signin.html" style="color: #0466C9;">Sign in</a> and continue!</div>
   </form>
+
 
  <!-- Javascript -->
     <!-- ------------------ -->
