@@ -4,32 +4,36 @@ let movieContainer = document.getElementById("movies-container");
     let defaultContainer = `
     
     <template id="movieTemplate">
-            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
-              <div class="movie-card">
-                <button id="wishlist-button" href="" class="rem-lib-btn" >
-                <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect y="1.625" width="1.25" height="10" transform="rotate(-90 0 1.625)" fill="white"/>
-                </svg>
-
-                </button>
-                <div>
-                  <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
-                  <div class="movie-card-overlay">
-  
-                  </div>
-                </div>
-                
-                <div class="movie-card_info">
-                  <a href=""> <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </a>
-                  <div class="movie-meta">
-                    <div id="movie-year">2021</div>
-                    <div class="pipe"></div>
-                    <div id="movie-genres">Adventure, Drama</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
+    <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
+    <div class="movie-card">
+      <button id="wishlist-button" href="" class="rem-lib-btn" >
+      <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect y="1.625" width="1.25" height="10" transform="rotate(-90 0 1.625)" fill="white"/>
+      </svg>
+      
+      </button>
+      <div>
+        <div class="image-container">
+          <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
+          <div class="movie-card-overlay">
+            <div id="review-avg" class="review-number">10</div>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <div class="movie-card_info">
+        <a href=""> <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </a>
+        <div class="movie-meta">
+          <div id="movie-year">2021</div>
+          <div class="pipe"></div>
+          <div id="movie-genres">Adventure, Drama</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
           </template>
     
     `
@@ -128,6 +132,7 @@ function loadWatchList() {
         $(currentChild).find("#movie-title").text(watchListArray[i].original_title);
         $(currentChild).find("#movie-year").text(movieYear);
         $(currentChild).find("#movie-genres").text(lessGenres.join(", "));
+        $(currentChild).find("#review-avg").text(watchListArray[i].vote_average);
         $(currentChild).find("#movie-img").attr('src','https://image.tmdb.org/t/p/w500/' + watchListArray[i].poster_path);
         $(currentChild).find("#wishlist-button").attr("id", watchListArray[i].id);
       }
