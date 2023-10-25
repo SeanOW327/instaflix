@@ -8,6 +8,7 @@
     <!-- Style sheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/STYLES/main.css">
+    <link rel="stylesheet" href="/STYLES/movie-library.css">
 </head>
   <body style="background-color: #0F0F10;">
     <!-- ------------------------------------------------------------------------------------------------------------------- -->
@@ -51,64 +52,90 @@
       
       
 
-    <div class="container">
+    <body>
+      <div class="container">
         <div class="row py-3">
+            <!-- Content for the first row if needed -->
         </div>
+        
         <div class="row">
+            <!-- Top-Rated Movie Cards -->
+            <h4>Top-Rated</h4>
+            <div class="headerDivider"></div>
+            <div id="top-rated-movies-container" class="row movies-list">
+                <!-- Top-Rated Movie cards will be added here -->
+            </div>
+            
+            <h4>COMING SOON</h4>
+            <div class="headerDivider"></div>
+            
+            <!-- Coming Soon Movie Cards -->
+            <div id="coming-soon-movies-container" class="row movies-list">
+                <!-- Coming Soon Movie cards will be added here -->
+            </div>
+            
+             <!-- Movie cards -->
+             <div id="movies-container" class="row movies-list">
+              <!-- Movie cards will be added here -->
+          </div>
+          
           <h4>COMING SOON</h4>
           <div class="headerDivider"></div>
           
-          <div class="row" id="movie-container"></div>
-            
-            <!-- COMING SOON -->
-            
-
-        <h4>IN CINEMA</h4>
-        <div class="headerDivider"></div>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
+          <div class="row" id="movie-container">
+              <!-- Content for COMING SOON section if needed -->
+          </div>
+          
+          <h4>IN CINEMA</h4>
+          <div class="headerDivider"></div>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                      <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                      <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
+                  </div>
               </div>
-              <div class="carousel-item">
-                <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
           </div>  
-
-        <!-- news -->
-        <h4>NEWS</h4>
-        <div class="headerDivider"></div>
-            <div class="col-12 col-md-4 mb-3 px-12">
-                <div class="card">
-                    <div class="card-body">
+          
+          <h4>NEWS</h4>
+          <div class="headerDivider"></div>
+          <div class="col-12 col-md-4 mb-3 px-12">
+              <div class="card">
+                  <div class="card-body">
                       <h3 class="card-title win">WIN BIG AND GET PREMIUM ACCESS FOR A WHOLE YEAR!</h3>
                       <a href="#" class="btn btn-primary">Enter Competition</a>
-                    </div>
                   </div>
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-                <div class="card news">
-                    <div class="card-body">
+              </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+              <div class="card news">
+                  <div class="card-body">
                       <h3 class="card-title news">GET SUPER DISCOUNTS WITH OUR MEMBERSHIP.</h3>
                       <a href="#" class="btn btn-primary">Subscribe</a>
-                    </div>
                   </div>
-            </div>
-            <div class="col-12 col-md-4 mb-3"> 
-                <div class="card">
-                    <div class="card-body">
-                      <h3 class="card-title">UPGRADE YOUR PLAN AND UNLOCK FEATURES !</h3>
+              </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3"> 
+              <div class="card">
+                  <div class="card-body">
+                      <h3 class="card-title">UPGRADE YOUR PLAN AND UNLOCK FEATURES!</h3>
                       <a href="#" class="btn btn-primary">View Features</a>
-                    </div>
                   </div>
-            </div>
-            <!-- NEWS -->
+              </div>
+          </div>
+      </div>
         </div>
     </div>
+    
+
+
+
+      
 
     <div class="footer-divider">
 

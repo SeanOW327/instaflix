@@ -201,7 +201,13 @@ a{
 
 
 /* Style for the carousel container */
-
+.add-lib-btn {
+    background-color: #0466C9;
+    width: 35px;
+   height: 35px;
+   border-radius: 5px;
+   border: none;
+}
 
 
 
