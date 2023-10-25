@@ -110,8 +110,8 @@ $.ajax({
             $carouselCaption.append('<h1 class="text-white">' + movie.title + '</h1>');
             $carouselCaption.append('<p class="text-white">' + movie.overview + '</p>');
             $carouselCaption.append('<div class="d-flex justify-content-between">');
-            $carouselCaption.find('.d-flex').append('<button class="btn btn-primary mx-1">Watch now</button>');
-            $carouselCaption.find('.d-flex').append('<button class="btn btn-primary1 mx-1 add-to-watchlist">Add to Watchlist</button>');
+            $carouselCaption.find('.d-flex').append('<button id=" ' + movie.id + '" class="btn btn-primary mx-1">Watch now</button>');
+            $carouselCaption.find('.d-flex').append('<button id=" ' + movie.id + '" class="btn btn-primary1 mx-1 add-to-watchlist">Add to Watchlist</button>'); //attach movie id to watch list button
             $carouselCaption.append('<p class="text-viewer">Viewer Rating: ' + movie.vote_average + '</p');
 
             // Add a click event handler to the "Add to Watchlist" button using the closure function
@@ -133,28 +133,61 @@ $.ajax({
 });
 
 // Function to create a closure for the movie data
-function createAddToWatchlistHandler(movie) {
-    return function() {
-        var movieData = {
-            title: movie.title,
-            overview: movie.overview,
-            backdrop_path: movie.backdrop_path,
-            vote_average: movie.vote_average
-        };
 
-        // Check if the movie is already in the watchlist
-        var isMovieInWatchlist = watchlist.some(function(watchlistItem) {
-            return watchlistItem.title === movieData.title;
-        });
+// ---------------------------------------------------------------------------
+// Add to watch list
+  
+let watchList = JSON.parse(localStorage.getItem('watchlist')) || [];
+console.log(watchList)
 
-        if (!isMovieInWatchlist) {
-            addToWatchlistAndDisplayTable(movieData);
+$(document).ready(function() {
+
+
+  $(document).on("click", ".add-to-watchlist", function() {
+    let buttonId = $(this).attr("id");
+    var isDuplicate = false;
+    for(let i = 0; i < watchList.length; i++){
+      if(buttonId === watchList[i]){
+        isDuplicate = true;
+      } 
+    }
+    
+    if(isDuplicate === false){
+
+      let movieResult;
+
+      const options = {
+        method: 'GET',
+        headers: {
+          accept: 'application/json',
+          Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZmIyNzAwYzVhMjkxZTkyZGFlZTYyMjEyZTVlMjRmOCIsInN1YiI6IjY1MzRmNTUzMmIyMTA4MDExZGRmYTE5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aF-FMrsAtLTGS4ISe4FLhdLw9YJb0_xcdnNbLEZH--s'
         }
-    };
-}
+      };
+      
+      const apiCallPromise = fetch('https://api.themoviedb.org/3/movie/' + buttonId, options)
+        .then(response => response.json())
+        .then(data => {
+          movieResult = data;
+        })
+        .catch(err => console.error(err));
+
+      apiCallPromise.then(() => {
+        watchList.push(buttonId)
+        localStorage.setItem('watchlist', JSON.stringify(watchList));
+        alert("'" + movieResult.original_title + "'" + " has been added to watchlist!")
+      });
+    
+
+      
+    } else {
+      alert("Movie is already added!")
+    }
+    
+  });
+});
 
 // Add click event handler for "Add to Watchlist" button
-$carouselCaption.find('.add-to-watchlist').on('click', createAddToWatchlistHandler(movie));
+// $carouselCaption.find('.add-to-watchlist').on('click', createAddToWatchlistHandler(movie));
 
 
 
