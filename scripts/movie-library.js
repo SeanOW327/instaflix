@@ -205,12 +205,69 @@ $(document).ready(function() {
 // Filter by genre
 
 $(document).ready(function() {
-  const dropdown = $('#dropdown');
+  function displayComedy(){
 
-  options.forEach(option => {
-    dropdown.append($('<option>', {
-      value: option.value,
-      text: option.text
-    }));
-  });
+    let movieFilterArray;
+  
+    const options = {
+      method: 'GET',
+      headers: {
+        accept: 'application/json',
+        Authorization: 'Bearer 0fb2700c5a291e92daee62212e5e24f8'
+      }
+    };
+    
+    const apiCallPromise = fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1&sort_by=popularity.desc&with_genres=comedy', options)
+      .then(response => response.json())
+      .then(data => {
+        for(let i = 0; i <data.results.length; i++){
+            movieFilterArray.push(data.results[i]);
+        }
+         
+    })
+      .catch(err => console.error(err));
+  
+  
+      function loadMovies() {
+          
+        movieContainer.innerHTML = defaultContainer;
+        for (let i = 0; i < movieFilterArray.length; i++) {
+            $("#movies-container").append($("#movieTemplate").html());
+            
+            let movieGenres = [];
+            for(let j = 0; j < movieFilterArray[i].genre_ids.length; j++){
+                for(let k = 0; k < genreArray.genres.length; k++){
+                    
+                    if(genreArray.genres[k].id === movieFilterArray[i].genre_ids[j]){
+                       
+                        movieGenres.push(genreArray.genres[k].name)
+                    }
+                }
+            }
+            
+            let lessGenres = [];
+            for(let j = 0; j < 2; j++){
+                lessGenres.push(movieGenres[j])
+            }
+  
+            let movieYear = movieFilterArray[i].release_date.substring(0, 4);
+  
+        let currentChild = $("#movies-container").children().eq(i + 1);
+        $(currentChild).find("#movie-title").text(movieFilterArray[i].original_title);
+        $(currentChild).find("#movie-year").text(movieYear);
+        $(currentChild).find("#movie-genres").text(lessGenres.join(", "));
+        $(currentChild).find("#movie-img").attr('src','https://image.tmdb.org/t/p/w500/' + movieFilterArray[i].poster_path);
+        $(currentChild).find("#wishlist-button").attr("id", movieFilterArray[i].id);
+      }
+    }
+    
+  
+    apiCallPromise.then(() => {
+        loadMovies();
+    });
+
+  }
+  
+  $("#comedy-movies-filter").on("click", displayComedy);
+
 });
