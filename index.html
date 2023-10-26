@@ -8,6 +8,8 @@
     <!-- Style sheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/STYLES/main.css">
+    <link rel="stylesheet" href="/STYLES/movie-library.css">
+    <link rel="stylesheet" href="/STYLES/components.css">
 </head>
   <body style="background-color: #0F0F10;">
     <!-- ------------------------------------------------------------------------------------------------------------------- -->
@@ -24,13 +26,13 @@
           <div class="collapse navbar-collapse justify-content-center " id="navbarNav" style="margin-left: -50px;">
              <ul class="nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#" style="border-bottom: 2px solid #a4c9ba8d;color: white;">Home</a>
+          <a class="nav-link active" aria-current="page" href="/index.html" style="border-bottom: 2px solid #a4c9ba8d;color: white;">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color: #a4c9bab6;">Watchlist</a>
+          <a class="nav-link" href="/pages/watchlist.html" style="color: #a4c9bab6;">Watchlist</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" style="color:#a4c9bab6 ;">Library</a>
+          <a class="nav-link" href="/pages/movie-library.html" style="color:#a4c9bab6 ;">Library</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" style="color:#a4c9bab6 ;">News</a>
@@ -44,140 +46,106 @@
 
       <!-- Page Content -->
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/ASSETS/post malone.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100">
-              <h1 class="text-white">Movie Title</h1>
-              <p class="text-white">Some representative placeholder content for the first slide.</p>
-              <div class="d-flex justify-content-between">
-                <button class="btn btn-primary mx-1">Wach now</button>
-                <button class="btn btn-primary1 mx-1">Add to Wachlist</button>
-              </div>
-              <p class="text-viewer">Viewer Rateing</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="/ASSETS/blue beetle.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100">
-                <h1 class="text-white">Movie Title</h1>
-                <p class="text-white">Some representative placeholder content for the first slide.</p>
-                <div class="d-flex justify-content-between">
-                  <button class="btn btn-primary mx-1">Wach now</button>
-                  <button class="btn btn-primary1 mx-1">Add to Wachlist</button>
-                </div>
-                <p class="text-viewer">Viewer Rateing</p>
-              </div>
-          </div>
-          <div class="carousel-item">
-            <img src="/ASSETS/kraven.jpg" class="d-block w-100" alt="...">
-            <div class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100">
-                <h1 class="text-white">Movie Title</h1>
-                <p class="text-white">Some representative placeholder content for the first slide.</p>
-                <div class="d-flex justify-content-between">
-                  <button class="btn btn-primary mx-1">Wach now</button>
-                  <button class="btn btn-primary1 mx-1">Add to Wachlist</button>
-                </div>
-                <p class="text-viewer">Viewer Rateing</p>
-              </div>
-          </div>
-        </div>
-      </div>
-      
-      
-
-    <div class="container">
-        <div class="row py-3">
-        </div>
-        <div class="row">
-            <!-- COMING SOON -->
-            <h4>COMING SOON</h4>
-            <div class="headerDivider"></div>
-            <div class="col-12 col-md-3 mb-3 px-12">
-                <div class="card" style="background-color: rgba(0, 0, 0, 0); border: none;">
-                    <img src="/ASSETS/morbius.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Morbius</h5>
-                      <p class="card-text">2024</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-3 mb-3">
-                <div class="card" style="background-color: rgba(0, 0, 0, 0); border: none;">
-                    <img src="/ASSETS/black widow.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Black Widow</h5>
-                      <p class="card-text">2023</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-3 mb-3"> 
-                <div class="card" style="background-color: rgba(0, 0, 0, 0); border: none;">
-                    <img src="/ASSETS/The galaxy.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Heart of stone</h5>
-                      <p class="card-text">2024</p>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-3 mb-3"> 
-                <div class="card" style="background-color: rgba(0, 0, 0, 0); border: none;">
-                    <img src="/ASSETS/ready-player-one.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">No hard feelings</h5>
-                      <p class="card-text">2023</p>
-                    </div>
-                  </div>
-            </div>
-            <!-- COMING SOON -->
-            
-
-        <h4>IN CINEMA</h4>
-        <div class="headerDivider"></div>
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
-              </div>
-              <div class="carousel-item">
-                <img src="/assets/incinema.jpg" class="d-block w-100" alt="...">
-              </div>
-            </div>
-          </div>  
-
-        <!-- news -->
-        <h4>NEWS</h4>
-        <div class="headerDivider"></div>
-            <div class="col-12 col-md-4 mb-3 px-12">
-                <div class="card">
-                    <div class="card-body">
-                      <h3 class="card-title win">WIN BIG AND GET PREMIUM ACCESS FOR A WHOLE YEAR!</h3>
-                      <a href="#" class="btn btn-primary">Enter Competition</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-4 mb-3">
-                <div class="card news">
-                    <div class="card-body">
-                      <h3 class="card-title news">GET SUPER DISCOUNTS WITH OUR MEMBERSHIP.</h3>
-                      <a href="#" class="btn btn-primary">Subscribe</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-12 col-md-4 mb-3"> 
-                <div class="card">
-                    <div class="card-body">
-                      <h3 class="card-title">UPGRADE YOUR PLAN AND UNLOCK FEATURES !</h3>
-                      <a href="#" class="btn btn-primary">View Features</a>
-                    </div>
-                  </div>
-            </div>
-            <!-- NEWS -->
+        <div class="carousel-inner" id="movie-slider">
+            <!-- Slides will be dynamically added here -->
         </div>
     </div>
+      
+      
+
+    <body>
+      <div class="container">
+        <div class="row py-3">
+            <!-- Content for the first row if needed -->
+        </div>
+        
+        <div class="row">
+            <!-- Top-Rated Movie Cards -->
+            <h4>Top-Rated</h4>
+            <div class="headerDivider"></div>
+            <div id="top-rated-movies-container" class="row movies-list">
+                <!-- Top-Rated Movie cards will be added here -->
+            </div>
+            
+            <h4>COMING SOON</h4>
+            <div class="headerDivider"></div>
+            
+            <!-- Coming Soon Movie Cards -->
+            <div id="coming-soon-movies-container" class="row movies-list">
+                <!-- Coming Soon Movie cards will be added here -->
+            </div>
+            
+
+          
+          <h4>IN CINEMA</h4>
+          <div class="headerDivider"></div>
+          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <!-- Background Image -->
+                    <img src="/assets/incinema.jpg" class="d-block w-100" alt="Background Image">
+        
+                    <!-- Movie Information Overlay -->
+                    <div class="carousel-caption d-none d-md-block text-left">
+                        <div class="row">
+                            <!-- Movie Poster -->
+                            <div class="col-md-6">
+                                <img src="/ASSETS/movie-poster.jfif" alt="Movie Poster" class="img-fluid" style="width: 300px;height: 410px;">
+                            </div>
+                            <!-- Movie Details -->
+                            <div class="col-md-6">
+                                <h2 style="color: #ffff;">
+                                <b>Movie Title</b></h2>
+                                <p class="text-left" style="color: #ffff;">Description of the movie goes here.</p>
+                                <p class="text-left" style="color: #ffff;">Genre: Action, Adventure</p>
+                                <div class="text-right">
+                                    <a href="#" class="btn btn-primary">View on Map</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more carousel items as needed -->
+            </div>
+        </div>
+        
+        
+        
+          
+          <h4>NEWS</h4>
+          <div class="headerDivider"></div>
+          <div class="col-12 col-md-4 mb-3 px-12">
+              <div class="card">
+                  <div class="card-body">
+                      <h3 class="card-title win">WIN BIG AND GET PREMIUM ACCESS FOR A WHOLE YEAR!</h3>
+                      <a href="#" class="btn btn-primary">Enter Competition</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3">
+              <div class="card news">
+                  <div class="card-body">
+                      <h3 class="card-title news">GET SUPER DISCOUNTS WITH OUR MEMBERSHIP.</h3>
+                      <a href="#" class="btn btn-primary">Subscribe</a>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-md-4 mb-3"> 
+              <div class="card">
+                  <div class="card-body">
+                      <h3 class="card-title">UPGRADE YOUR PLAN AND UNLOCK FEATURES!</h3>
+                      <a href="#" class="btn btn-primary">View Features</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+        </div>
+    </div>
+    
+
+
+
+      
 
     <div class="footer-divider">
 

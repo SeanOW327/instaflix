@@ -18,6 +18,17 @@
     <link rel="stylesheet" href="../styles/components.css">
     <link rel="stylesheet" href="../STYLES/main.css">
 
+    <style>
+      table {
+          border-collapse: collapse;
+          display: none; /* Initially hide the table */
+      }
+      th, td {
+          border: 1px solid black;
+          padding: 5px;
+      }
+  </style>
+
   </head>
   <body>
 
@@ -35,7 +46,7 @@
         <div class="collapse navbar-collapse justify-content-center " id="navbarNav" style="margin-left: -50px;">
            <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link " aria-current="page" href="#" style="color:#a4c9bab6 ;">Home</a>
+        <a class="nav-link " aria-current="page" href="../index.html" style="color:#a4c9bab6 ;">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="../pages/watchlist.html" style="color: #a4c9bab6;">Watchlist</a>
@@ -60,52 +71,32 @@
           <h1>Our Catalogue</h1>
         </div>
         <div class="row filter-buttons">
-          <button id="all-movies-filter" class="all-movies-btn all-movies-active" >All Movies </button>
+          
+          
+          
+          <form id="filter-form">
+            <button id="all-movies-filter" class="all-movies-btn all-movies-active" >All Movies </button>
 
-          <div id="genre-filter" class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle filter-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Genre
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+            <select id="genre-select" class="form-select " aria-label="Default select example">
+              <option value="" selected>Genre</option>
+            </select>
+  
+            <select id="year-select" class="form-select " aria-label="Default select example">
+              <option value="" selected>Year</option>
+            </select>
 
-          <select class="form-select " aria-label="Default select example">
-            <option selected>Genre</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-
-          <div id="genre-filter" class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle filter-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Year
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
-
-          <div id="genre-filter" class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle filter-button" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              IMDB Score
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+            <select id="score-select" class="form-select " aria-label="Default select example">
+              <option value="" selected>Score</option>
+            </select>
+          </form>
+          
         </div>
 
         <!-- Movie cards -->
+        
         <div id="movies-container" class="row movies-list">
-          <template id="movieTemplate">
+            
+          <template>
             <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
               <div class="movie-card">
                 <button id="wishlist-button" href="" class="add-lib-btn" >
@@ -115,10 +106,14 @@
                   </svg>
                 </button>
                 <div>
-                  <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
-                  <div class="movie-card-overlay">
-  
+                  <div class="image-container">
+                    <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
+                    <div class="movie-card-overlay">
+                      <div class="review-number">10</div>
+                    </div>
                   </div>
+                  
+                  
                 </div>
                 
                 <div class="movie-card_info">
@@ -133,9 +128,6 @@
               
             </div>
           </template>
-          
-          
-            
           </div>
           
         </div>
