@@ -432,15 +432,19 @@ document.addEventListener('DOMContentLoaded', loadTopRatedMovies);
 
 
 
-// Function to load coming soon movies into the "Coming Soon" section
+// Function to load the 4 most recent upcoming movies into the "Coming Soon" section
 function loadComingSoonMovies() {
     const comingSoonMoviesURL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=942846c4f78bca737d083698069ab8c5&language=en-US&page=1'; // Replace with your API key
 
     fetch(comingSoonMoviesURL)
         .then(response => response.json())
         .then(data => {
-            const movies = data.results.slice(0, 4); // Get the top 4 upcoming movies
+            // Filter movies that are genuinely "coming soon" based on release date
+            const currentDate = new Date();
+            const movies = data.results.filter(movie => new Date(movie.release_date) > currentDate).slice(0, 4);
+
             const comingSoonMoviesContainer = document.getElementById('coming-soon-movies-container');
+            comingSoonMoviesContainer.innerHTML = ''; // Clear existing content
 
             movies.forEach(movie => {
                 // Create a movie card element
@@ -476,8 +480,64 @@ function loadComingSoonMovies() {
         });
 }
 
+
+
+
 // Call the function to load coming soon movies when the page is ready
 document.addEventListener('DOMContentLoaded', loadComingSoonMovies);
+
+
+        // Replace this with your API URL
+        const apiURL = 'https://api.themoviedb.org/3/movie/upcoming?api_key=942846c4f78bca737d083698069ab8c5&language=en-US&page=1';
+
+        fetch(apiURL)
+            .then(response => response.json())
+            .then(data => {
+                // Iterate through movie data to create carousel items
+                data.forEach((movie, index) => {
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+
+                    carouselItem.innerHTML = `
+                        <!-- Background Image -->
+                        <img src="${movie.backgroundImage}" class="d-block w-100" alt="Background Image">
+        
+                        <!-- Movie Information Overlay -->
+                        <div class="carousel-caption d-none d-md-block text-left">
+                            <div class="row">
+                                <!-- Movie Poster -->
+                                <div class="col-md-6">
+                                    <img src="${movie.poster}" alt="Movie Poster" class="img-fluid">
+                                </div>
+                                <!-- Movie Details -->
+                                <div class="col-md-6">
+                                    <h2 style="color: #ffff;">${movie.title}</h2>
+                                    <p class="text-left" style="color: #ffff;">${movie.description}</p>
+                                    <p class="text-left" style="color: #ffff;">Genre: ${movie.genre}</p>
+                                    <div class="text-right">
+                                        <a href="${movie.mapLink}" class="btn btn-primary">View on Map</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+
+                    document.querySelector('.carousel-inner').appendChild(carouselItem);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching movie data:', error);
+            });
+
+
+            
+
+
+
+
+
+
+
 
 
 
