@@ -96,9 +96,6 @@ let reviewDropdown = document.getElementById("score-select");
 
 
 // ---------------------------------------------------------------------------
-// IMDB score
-
-// ---------------------------------------------------------------------------
 // Fetch movie data
 
 let movieArray = []; 
