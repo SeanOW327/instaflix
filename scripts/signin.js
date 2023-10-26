@@ -80,7 +80,7 @@ function Validate() {
     if (passwordVal === "") {
         setErrorMsg(password, 'Password cannot be blank');
     } else if (passwordVal.length <= 7) {
-        setErrorMsg(password, 'Username must have a minimum of 8 characters');
+        setErrorMsg(password, 'Password must have a minimum of 8 characters');
     } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(passwordVal)) {
         setErrorMsg(password, 'Your Password has at least one capital letter, one lowercase letter, and a number');
     } else {
