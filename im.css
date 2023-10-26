@@ -37,69 +37,8 @@ button {
 /* ---------------------------------------- */
 /* Bootstrap Component Overrides */
 
-/* Style the overall navigation bar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
- 
-  padding: 10px 20px; 
-}
-
-/* Style the logo on the left */
-.navbar-logo img {
-  max-height: 50px;
-}
-
-/* Style the navigation links in the center */
-.navbar-center {
-  text-align: center;
-}
-
-.navbar-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar-links li {
-  display: inline;
-  margin-right: 20px; 
-}
-
-.navbar-links a {
-  text-decoration: none;
-  color: #050505;
-}
-
 /* Style the search box and sign-up button on the right */
-.navbar-right {
-  display: flex;
-  align-items: center;
-}
 
-.search-box {
-  margin-right: 20px;
-}
-
-
-
-.search-box button[type="submit"] {
-  padding: 5px 10px;
-  background-color: #007bff; /* Button background color */
-  color: #fff; /* Button text color */
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-}
-
-.signup-button {
-  padding: 10px 20px;
-  background-color: #007bff; /* Button background color */
-  color: #fff; /* Button text color */
-  text-decoration: none;
-  border-radius: 3px;
-}
 
 
 .shopping-bag {
@@ -371,29 +310,6 @@ body, html {
 .container{
   padding-right: 60px;
 
-}
-.nav-link {
-    font-family: 'Lato', sans-serif;
-    color: rgba(0, 0, 0, 0.60);
-    
-
-}
-
-.nav-link:hover {
-    color: #076993;
-    
-}
-
-.nav-link.active {
-    border-bottom: 2px solid #033c54;
-    color: #077bad;
-}
-
-.navbar-brand {
-  width: 60px;
-
-
-  padding: 10px;
 }
 
 
