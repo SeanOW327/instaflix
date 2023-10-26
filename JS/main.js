@@ -1,3 +1,11 @@
+const options = {
+  method: 'GET',
+  headers: {
+    accept: 'application/json',
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZmIyNzAwYzVhMjkxZTkyZGFlZTYyMjEyZTVlMjRmOCIsInN1YiI6IjY1MzRmNTUzMmIyMTA4MDExZGRmYTE5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aF-FMrsAtLTGS4ISe4FLhdLw9YJb0_xcdnNbLEZH--s'
+  }
+};
+ 
  // Replace 'YOUR_API_KEY' with your actual TMDb API key
  var apiKey = '942846c4f78bca737d083698069ab8c5';
 
@@ -115,37 +123,51 @@ let movieContainer = document.getElementById("movies-container");
     let defaultContainer = `
     
     <template id="movieTemplate">
-            <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
-              <div class="movie-card">
-                <button id="wishlist-button" href="" class="add-lib-btn" >
-                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="4.375" width="1.25" height="10" fill="white"/>
-                    <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
-                  </svg>
-                </button>
-                <div>
-                  <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
-                  <div class="movie-card-overlay">
-  
-                  </div>
-                </div>
-                
-                <div class="movie-card_info">
-                  <a href=""> <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </a>
-                  <div class="movie-meta">
-                    <div id="movie-year">2021</div>
-                    <div class="pipe"></div>
-                    <div id="movie-genres">Adventure, Drama</div>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
+    <div class="col-xxl-2 col-lg-3 col-md-4 col-sm-6">
+    <div class="movie-card">
+      <button id="wishlist-button" href="" class="add-lib-btn" >
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="4.375" width="1.25" height="10" fill="white"/>
+          <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
+        </svg>
+      </button>
+      <div>
+        <div class="image-container">
+          <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
+          <div class="movie-card-overlay">
+            <div id="review-avg" class="review-number">10</div>
+          </div>
+        </div>
+        
+        
+      </div>
+      
+      <div class="movie-card_info">
+        <a href=""> <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </a>
+        <div class="movie-meta">
+          <div id="movie-year">2021</div>
+          <div class="pipe"></div>
+          <div id="movie-genres">Adventure, Drama</div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
           </template>
     
     `
 
-
+// ---------------------------------------------------------------------------
+// Fetch genres
+let genreArray = []; 
+      
+const genreCallPromise = fetch('https://api.themoviedb.org/3/genre/movie/list?language=en', options)
+  .then(response => response.json())
+  .then(data => {
+      let genreArrayData = data;
+      genreArray = genreArrayData.genres;
+    })
+  .catch(err => console.error(err));
 
   
 $(document).ready(function() {
@@ -378,30 +400,58 @@ function loadTopRatedMovies() {
             const movies = data.results.slice(0, 4); // Get the top 4 movies
             const topRatedMoviesContainer = document.getElementById('top-rated-movies-container');
 
+            
+
             movies.forEach(movie => {
                 // Create a movie card element
                 const movieCard = document.createElement('div');
                 movieCard.className = 'col-xxl-2 col-lg-3 col-md-4 col-sm-6';
 
+                let movieGenres = [];
+            for(let j = 0; j < movie.genre_ids.length; j++){
+                for(let k = 0; k < genreArray.length; k++){
+                    
+                    if(genreArray[k].id === movie.genre_ids[j]){
+                       
+                        movieGenres.push(genreArray[k].name)
+                    }
+                }
+            }
+
+                let lessGenres = [];
+                for(let j = 0; j < 2; j++){
+                  lessGenres.push(movieGenres[j])
+                }
+
+
                 movieCard.innerHTML = `
-                    <div class="movie-card">
-                        <button id="${movie.id}" href="" class="add-lib-btn">
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4.375" width="1.25" height="10" fill="white"/>
-                                <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
-                            </svg>
-                        </button>
-                        <div>
-                            <img class="img-fluid movie-card_img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.original_title}">
-                            <div class="movie-card-overlay"></div>
-                        </div>
-                        <div class="movie-card_info">
-                            <a href="#"><h4 class="movie-name">${movie.original_title}</h4></a>
-                            <div>${movie.release_date.substring(0, 4)}</div>
-                            <div class="pipe"></div>
-                            <div>${getGenres(movie.genre_ids)}</div>
-                        </div>
+                <div class="movie-card">
+                  <button id="${movie.id}" href="" class="add-lib-btn" >
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="4.375" width="1.25" height="10" fill="white"/>
+                      <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
+                    </svg>
+                  </button>
+                  <div>
+                    <div class="image-container">
+                      <img id="movie-img" class="img-fluid movie-card_img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.original_title}">
+                      <div class="movie-card-overlay">
+                        <div id="review-avg" class="review-number">10</div>
+                      </div>
                     </div>
+                    
+                    
+                  </div>
+                  
+                  <div class="movie-card_info">
+                    <a href=""> <h4 id="movie-title" class="movie-name"> ${movie.original_title}</h4> </a>
+                    <div class="movie-meta">
+                      <div id="movie-year">${movie.release_date.substring(0, 4)}</div>
+                      <div class="pipe"></div>
+                      <div id="movie-genres">${lessGenres.join(", ")}</div>
+                    </div>
+                  </div>
+                </div>
                 `;
 
                 topRatedMoviesContainer.appendChild(movieCard);
@@ -451,25 +501,50 @@ function loadComingSoonMovies() {
                 const movieCard = document.createElement('div');
                 movieCard.className = 'col-xxl-2 col-lg-3 col-md-4 col-sm-6';
 
+                let movieGenres = [];
+            for(let j = 0; j < movie.genre_ids.length; j++){
+                for(let k = 0; k < genreArray.length; k++){
+                    
+                    if(genreArray[k].id === movie.genre_ids[j]){
+                       
+                        movieGenres.push(genreArray[k].name)
+                    }
+                }
+            }
+
+                let lessGenres = [];
+                for(let j = 0; j < 2; j++){
+                  lessGenres.push(movieGenres[j])
+                }
+
                 movieCard.innerHTML = `
-                    <div class="movie-card">
-                        <button id="${movie.id}" href="" class="add-lib-btn">
-                            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect x="4.375" width="1.25" height="10" fill="white"/>
-                                <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
-                            </svg>
-                        </button>
-                        <div>
-                            <img class="img-fluid movie-card_img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.original_title}">
-                            <div class="movie-card-overlay"></div>
-                        </div>
-                        <div class="movie-card_info">
-                            <a href="#"><h4 class="movie-name">${movie.original_title}</h4></a>
-                            <div>${movie.release_date.substring(0, 4)}</div>
-                            <div class="pipe"></div>
-                            <div>${getGenres(movie.genre_ids)}</div>
-                        </div>
+                <div class="movie-card">
+                  <button id="${movie.id}" href="" class="add-lib-btn" >
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="4.375" width="1.25" height="10" fill="white"/>
+                      <rect y="5.625" width="1.25" height="10" transform="rotate(-90 0 5.625)" fill="white"/>
+                    </svg>
+                  </button>
+                  <div>
+                    <div class="image-container">
+                      <img id="movie-img" class="img-fluid movie-card_img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.original_title}">
+                      <div class="movie-card-overlay">
+                        <div id="review-avg" class="review-number">10</div>
+                      </div>
                     </div>
+                    
+                    
+                  </div>
+                  
+                  <div class="movie-card_info">
+                    <a href=""> <h4 id="movie-title" class="movie-name"> ${movie.original_title}</h4> </a>
+                    <div class="movie-meta">
+                      <div id="movie-year">${movie.release_date.substring(0, 4)}</div>
+                      <div class="pipe"></div>
+                      <div id="movie-genres">${lessGenres.join(", ")}</div>
+                    </div>
+                  </div>
+                </div>
                 `;
 
                 comingSoonMoviesContainer.appendChild(movieCard);

@@ -9,8 +9,7 @@ let movieContainer = document.getElementById("movies-container");
       <button id="wishlist-button" href="" class="rem-lib-btn" >
       <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect y="1.625" width="1.25" height="10" transform="rotate(-90 0 1.625)" fill="white"/>
-      </svg>
-f      
+      </svg>      
       </button>
       <div>
         <div class="image-container">
