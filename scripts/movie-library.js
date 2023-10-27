@@ -7,7 +7,7 @@ const options = {
 };
 
 // ---------------------------------------------------------------------------
-// Sewtting containers
+// Setting containers
 let movieContainer = document.getElementById("movies-container");
     let defaultContainer = `
     
@@ -32,7 +32,7 @@ let movieContainer = document.getElementById("movies-container");
       </div>
       
       <div class="movie-card_info">
-        <a href=""> <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </a>
+        <div id="movie-original-name" class="movie-name" > <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </div>
         <div class="movie-meta">
           <div id="movie-year">2021</div>
           <div class="pipe"></div>
@@ -155,13 +155,21 @@ $(document).ready(function() {
         $(currentChild).find("#movie-genres").text(lessGenres.join(", "));
         $(currentChild).find("#movie-img").attr('src','https://image.tmdb.org/t/p/w500/' + movieArray[i].poster_path);
         $(currentChild).find("#wishlist-button").attr("id", movieArray[i].id);
-        
+        $(currentChild).find("#movie-original-name").attr("id", movieArray[i].id);
       }
     }
     $("#all-movies-filter").on("click", loadMovies);
 
+    
+
     apiCallPromise.then(() => {
         loadMovies();
+        
+        $(document).on("click", ".movie-name", function(){
+          window.location.href = 'http://127.0.0.1:5501/pages/individualmovie.html?id=' + this.id;
+          
+        })
+        
     });
 
 }); // close document ready
@@ -335,5 +343,6 @@ $(document).ready(function() {
   
 
 });
+
 
 

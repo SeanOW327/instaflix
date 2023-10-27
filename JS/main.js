@@ -135,7 +135,7 @@ let movieContainer = document.getElementById("movies-container");
         <div class="image-container">
           <img id="movie-img" class="img-fluid movie-card_img" src="../assets-library/movie-img.jpg" alt="">
           <div class="movie-card-overlay">
-            <div id="review-avg" class="review-number">10</div>
+            <div id="review-avg" class="review-number"></div>
           </div>
         </div>
         
@@ -391,6 +391,7 @@ $(document).ready(function() {
 
 // ******************************************************************************
 // Function to load top-rated movies into the "Top-Rated" section
+
 function loadTopRatedMovies() {
     const topRatedMoviesURL = 'https://api.themoviedb.org/3/movie/top_rated?api_key=942846c4f78bca737d083698069ab8c5&language=en-US&page=1'; // Replace with your API key
 
@@ -436,7 +437,7 @@ function loadTopRatedMovies() {
                     <div class="image-container">
                       <img id="movie-img" class="img-fluid movie-card_img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.original_title}">
                       <div class="movie-card-overlay">
-                        <div id="review-avg" class="review-number">10</div>
+                        <div id="review-avg" class="review-number">${movie.vote_average}</div>
                       </div>
                     </div>
                     
@@ -528,9 +529,7 @@ function loadComingSoonMovies() {
                   <div>
                     <div class="image-container">
                       <img id="movie-img" class="img-fluid movie-card_img" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.original_title}">
-                      <div class="movie-card-overlay">
-                        <div id="review-avg" class="review-number">10</div>
-                      </div>
+                      
                     </div>
                     
                     
