@@ -5,6 +5,7 @@ const options = {
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwZmIyNzAwYzVhMjkxZTkyZGFlZTYyMjEyZTVlMjRmOCIsInN1YiI6IjY1MzRmNTUzMmIyMTA4MDExZGRmYTE5NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.aF-FMrsAtLTGS4ISe4FLhdLw9YJb0_xcdnNbLEZH--s'
     }
   };
+  
 
 // ---------------------------------------------------------------------------
 // Fetch genres
@@ -26,6 +27,7 @@ const urlParams = new URLSearchParams(window.location.search);
         fetch('https://api.themoviedb.org/3/movie/' + movieId, options)
             .then(response => response.json())
             .then(data => {
+                console.log(data)
                 console.log(data)
                 const movieInfo = document.getElementById("movie-info");
                 let movieYear = data.release_date.substring(0, 4);
@@ -51,7 +53,7 @@ const urlParams = new URLSearchParams(window.location.search);
                     
                 `;
             })
-            .catch(error => console.error("Error fetching movie data: " + error));
+            .catch(err => console.error(err));
 
 
             
