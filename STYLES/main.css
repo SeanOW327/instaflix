@@ -140,68 +140,6 @@ a{
     }
 }
 
-/* ---------------------------------------- */
-/* Library page */
-
-.library-heading{
-    padding-top: 90px;
-    text-align: center;
-}
-
-
-/* ---------------------------------------- */
-/* Filters */
-
-.filter-buttons{
-    margin-top: 30px;
-    justify-content: center;
-    gap: 30px;
-
-}
-
-.all-movies-btn{
-    display: flex;
-    padding: 5px 20px;
-    width: 175px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background: transparent;
-    border: #818489 solid 2px;
-    font-size: 20px;
-    color: white;
-}
-
-.all-movies-active{
-    display: flex;
-    padding: 5px 20px;
-    width: 175px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background: #0466C9;
-    font-size: 20px;
-    color: white;
-    border: none;
-}
-
-.dropdown{
-    width: 175px;
-    padding: 0;
-}
-
-.filter-button{
-    display: flex;
-    padding: 5px 20px;
-    width: 175px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background: transparent;
-    border: #818489 solid 2px;
-    font-size: 20px;
-    color: white;
-}
 
 /* ---------------------------------------- */
 /* Footer */

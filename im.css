@@ -4,9 +4,7 @@
 /* Global Styles */
 
 /* Fonts */
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Libre Baskerville', serif;
-}
+
 
 p {
     font-family: 'Lato', sans-serif;
@@ -20,9 +18,7 @@ p {
 
 /* ---------------------------------------- */
 /* Components */
-body {
-  background-color: #F0F8FF;
-}
+
 button {
     border: none;
     padding: 16px 20px;
@@ -165,61 +161,6 @@ body, html {
 }
 
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333; 
-  color: #fff; 
-  padding: 10px 20px; 
-}
-
-
-.footer-left img {
-  max-height: 30px; 
-}
-
-
-.footer-middle p {
-  margin: 0;
-  font-size: 14px;
-}
-
-
-.footer-right a {
-  color: #fff; 
-  text-decoration: none;
-  margin-left: 10px; 
-  font-size: 18px; 
-}
-
-
-.footer-right a:hover {
-  color: #007bff; 
-}
-
-
-.footer-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
-.footer-links li {
-  display: inline-block;
-  margin-right: 10px; 
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: #fff;
-}
-
-
-.footer-links a:hover {
-  color: #007bff;
-}
 
 
 .buttons {
