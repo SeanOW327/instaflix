@@ -4,9 +4,7 @@
 /* Global Styles */
 
 /* Fonts */
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Libre Baskerville', serif;
-}
+
 
 p {
     font-family: 'Lato', sans-serif;
@@ -20,9 +18,7 @@ p {
 
 /* ---------------------------------------- */
 /* Components */
-body {
-  background-color: #F0F8FF;
-}
+
 button {
     border: none;
     padding: 16px 20px;
@@ -69,7 +65,7 @@ button {
 
 .navbar-links a {
   text-decoration: none;
-  color: #050505;
+  color: #fcfbfb;
 }
 
 /* Style the search box and sign-up button on the right */
@@ -226,61 +222,6 @@ body, html {
 }
 
 
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #333; 
-  color: #fff; 
-  padding: 10px 20px; 
-}
-
-
-.footer-left img {
-  max-height: 30px; 
-}
-
-
-.footer-middle p {
-  margin: 0;
-  font-size: 14px;
-}
-
-
-.footer-right a {
-  color: #fff; 
-  text-decoration: none;
-  margin-left: 10px; 
-  font-size: 18px; 
-}
-
-
-.footer-right a:hover {
-  color: #007bff; 
-}
-
-
-.footer-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: inline-block;
-}
-
-.footer-links li {
-  display: inline-block;
-  margin-right: 10px; 
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: #fff;
-}
-
-
-.footer-links a:hover {
-  color: #007bff;
-}
 
 
 .buttons {
@@ -374,19 +315,19 @@ body, html {
 }
 .nav-link {
     font-family: 'Lato', sans-serif;
-    color: rgba(0, 0, 0, 0.60);
+    color: rgba(253, 250, 250, 0.6);
     
 
 }
 
 .nav-link:hover {
-    color: #076993;
+    color: #070c0f;
     
 }
 
 .nav-link.active {
     border-bottom: 2px solid #033c54;
-    color: #077bad;
+    color: #020f15;
 }
 
 .navbar-brand {
