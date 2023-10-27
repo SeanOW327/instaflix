@@ -145,3 +145,12 @@
     height: 3px;
     background: linear-gradient(90deg, rgba(217, 217, 217, 0.00) 0.19%, #D9D9D9 55.19%, rgba(0, 0, 0, 0.00) 100%);
 }
+
+
+/* ---------------------------------------------------------------- */
+/* Navbar */
+.centre-logo{
+    display: flex !important; 
+    align-items: center !important;
+    justify-content: center !important;
+}
