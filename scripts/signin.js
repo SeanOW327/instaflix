@@ -1,48 +1,45 @@
 const form = document.getElementById('form');
 const username = document.getElementById('username');
-const lastname = document.getElementById('lastname');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const cpassword = document.getElementById('cpassword');
 
 form.addEventListener('submit', (event) => {
     event.preventDefault();
     Validate();
 });
 
-const sendData = (usernameVal, lastnameVal, emailVal, passwordVal, sRate, Count) => {
+const sendData = (usernameVal, emailVal, passwordVal, sRate, Count) => {
     if (sRate === Count) {
-        
+        // Create an object to store the form data, including the password
         const userData = {
             username: usernameVal,
-            lastname: lastnameVal,
             email: emailVal,
             password: passwordVal
-           
+            
         };
-       
+        // Store  user data in local storage
         localStorage.setItem('userData', JSON.stringify(userData));
 
-        swal({
+        alert({
             title: "Success",
             text: "Hello " + usernameVal + ", you are registered!",
             icon: "success",
             button: "Go to Home",
         }).then(() => {
-            
+            // Redirect to the home page or replace the URL with your actual home page URL
             window.location.href = "index.html";
         });
     }
 };
 
-const SuccessMsg = (usernameVal, lastnameVal, emailVal, passwordVal) => {
+const SuccessMsg = (usernameVal, emailVal, passwordVal) => {
     let formContr = document.getElementsByClassName('form-control');
     var Count = formContr.length - 1;
     for (var i = 0; i < formContr.length; i++) {
         if (formContr[i].className === "form-control success") {
-            var sRate = 0 + i;
+            var sRate = 0 + i;s
             console.log(sRate);
-            sendData(usernameVal, lastnameVal, emailVal, passwordVal, sRate, Count);
+            sendData(usernameVal, emailVal, passwordVal, sRate, Count);
         } else {
             return false;
         }
@@ -60,27 +57,14 @@ const isEmail = (emailVal) => {
 
 function Validate() {
     const usernameVal = username.value.trim();
-    const lastnameVal = lastname.value.trim();
     const emailVal = email.value.trim();
     const passwordVal = password.value.trim();
-    const cpasswordVal = cpassword.value.trim();
 
     // username
     if (usernameVal === "") {
-        setErrorMsg(username, 'First name cannot be blank');
-    } else if (usernameVal.length <= 2) {
-        setErrorMsg(username, 'Username must have a minimum of 3 characters');
+        setErrorMsg(username, 'Username cannot be blank');
     } else {
         setSuccessMsg(username);
-    }
-
-    // last name
-    if (lastnameVal === "") {
-        setErrorMsg(lastname, 'Last name cannot be blank');
-    } else if (lastnameVal.length <= 2) {
-        setErrorMsg(lastname, 'Last must have a minimum of 3 characters');
-    } else {
-        setSuccessMsg(lastname);
     }
 
     // email
@@ -98,20 +82,12 @@ function Validate() {
     } else if (passwordVal.length <= 7) {
         setErrorMsg(password, 'Password must have a minimum of 8 characters');
     } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(passwordVal)) {
-        setErrorMsg(password, 'Include at least one capital letter, one lowercase letter, and a number');
+        setErrorMsg(password, 'Your Password has at least one capital letter, one lowercase letter, and a number');
     } else {
         setSuccessMsg(password);
     }
 
-    // confirm password
-    if (cpasswordVal === "") {
-        setErrorMsg(cpassword, 'Confirm password cannot be blank');
-    } else if (passwordVal != cpasswordVal) {
-        setErrorMsg(cpassword, 'Your Passwords do not match!');
-    } else {
-        setSuccessMsg(cpassword);
-    }
-    SuccessMsg(usernameVal, lastnameVal, emailVal, passwordVal);
+    SuccessMsg(usernameVal, emailVal, passwordVal);
 }
 
 function setErrorMsg(input, errormsgs) {
