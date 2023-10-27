@@ -90,7 +90,7 @@ $.ajax({
             $carouselCaption.append('<h1 class="text-white">' + movie.title + '</h1>');
             $carouselCaption.append('<p class="text-white">' + movie.overview + '</p>');
             $carouselCaption.append('<div class="d-flex justify-content-between">');
-            $carouselCaption.find('.d-flex').append('<button id=" ' + movie.id + '" class="btn btn-primary mx-1">Watch now</button>');
+            $carouselCaption.find('.d-flex').append('<button id=" ' + movie.id + '" class="btn btn-primary mx-1 watch-now-btn">Watch now</button>');
             $carouselCaption.find('.d-flex').append('<button id=" ' + movie.id + '" class="btn btn-primary1 mx-1 add-to-watchlist">Add to Watchlist</button>'); //attach movie id to watch list button
             $carouselCaption.append('<p class="text-viewer">Viewer Rating: ' + movie.vote_average + '</p');
 
@@ -110,6 +110,14 @@ $.ajax({
 
     
 });
+
+// ---------------------------------------------------------------------------
+        // Navigate to individual movie page
+        
+        $(document).on("click", ".watch-now-btn", function(){
+          window.location.href = 'http://127.0.0.1:5501/pages/individualmovie.html?id=' + this.id;
+          
+        })
 
 // Function to create a closure for the movie data
 // ############################################################
@@ -445,7 +453,7 @@ function loadTopRatedMovies() {
                   </div>
                   
                   <div class="movie-card_info">
-                    <a href=""> <h4 id="movie-title" class="movie-name"> ${movie.original_title}</h4> </a>
+                    <a id="${movie.id}" class="movie-link"> <h4 id="movie-title" class="movie-name"> ${movie.original_title}</h4> </a>
                     <div class="movie-meta">
                       <div id="movie-year">${movie.release_date.substring(0, 4)}</div>
                       <div class="pipe"></div>
@@ -462,6 +470,16 @@ function loadTopRatedMovies() {
             console.error('Error loading top-rated movies:', error);
         });
 }
+
+
+// ---------------------------------------------------------------------------
+// Navigate to individual movie page
+
+$(document).on("click", ".movie-link", function(){
+  window.location.href = 'http://127.0.0.1:5501/pages/individualmovie.html?id=' + this.id;
+  
+})
+
 
 // Helper function to get movie genres based on genre_ids
 function getGenres(genreIds) {

@@ -31,6 +31,7 @@
 
 .movie-name:hover{
     color: #0466C9;
+    cursor: pointer;
 }
 
 .pipe{

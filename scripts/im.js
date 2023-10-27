@@ -22,14 +22,14 @@ const genreCallPromise = fetch('https://api.themoviedb.org/3/genre/movie/list?la
 const urlParams = new URLSearchParams(window.location.search);
         const movieId = urlParams.get("id");
         alert(movieId)
-        fetch('https://api.themoviedb.org/3/movie/' + movieId)
+        
+        fetch('https://api.themoviedb.org/3/movie/' + movieId, options)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
                 const movieInfo = document.getElementById("movie-info");
                 let movieYear = data.release_date.substring(0, 4);
                 let movieGenres = [];
-                console.log(data.genres)
                 for(let j = 0; j < data.genres.length; j++){
                     for(let k = 0; k < genreArray.length; k++){
                         
@@ -39,7 +39,6 @@ const urlParams = new URLSearchParams(window.location.search);
                         }
                     }
                 }
-                console.log(movieGenres)
                 movieInfo.innerHTML = `
                     <h2>${data.original_title}</h2>
                     <p>Release Year: ${movieYear}</p>
