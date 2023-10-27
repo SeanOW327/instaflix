@@ -12,7 +12,7 @@ form.addEventListener('submit', (event) => {
 
 const sendData = (usernameVal, lastnameVal, emailVal, passwordVal, sRate, Count) => {
     if (sRate === Count) {
-        // Create an object to store the form data, including the password
+        
         const userData = {
             username: usernameVal,
             lastname: lastnameVal,
@@ -20,10 +20,18 @@ const sendData = (usernameVal, lastnameVal, emailVal, passwordVal, sRate, Count)
             password: passwordVal
            
         };
-        // Store user data in local storage
+       
         localStorage.setItem('userData', JSON.stringify(userData));
 
-        swal("Hello " + usernameVal, "You are Registered", "success");
+        swal({
+            title: "Success",
+            text: "Hello " + usernameVal + ", you are registered!",
+            icon: "success",
+            button: "Go to Home",
+        }).then(() => {
+            
+            window.location.href = "index.html";
+        });
     }
 };
 
@@ -57,47 +65,49 @@ function Validate() {
     const passwordVal = password.value.trim();
     const cpasswordVal = cpassword.value.trim();
 
-// username
+    // username
     if (usernameVal === "") {
-        setErrorMsg(username, 'first name cannot be blank');
+        setErrorMsg(username, 'First name cannot be blank');
     } else if (usernameVal.length <= 2) {
-        setErrorMsg(username, 'min 3 char');
+        setErrorMsg(username, 'Username must have a minimum of 3 characters');
     } else {
         setSuccessMsg(username);
     }
 
     // last name
     if (lastnameVal === "") {
-        setErrorMsg(lastname, 'last name cannot be blank');
+        setErrorMsg(lastname, 'Last name cannot be blank');
     } else if (lastnameVal.length <= 2) {
-        setErrorMsg(lastname, 'min 3 char');
+        setErrorMsg(lastname, 'Last must have a minimum of 3 characters');
     } else {
         setSuccessMsg(lastname);
     }
 
     // email
     if (emailVal === "") {
-        setErrorMsg(email, 'email cannot be blank');
+        setErrorMsg(email, 'Email cannot be blank');
     } else if (!isEmail(emailVal)) {
-        setErrorMsg(email, 'email is not valid');
+        setErrorMsg(email, 'This email is not valid');
     } else {
         setSuccessMsg(email);
     }
 
     // password
     if (passwordVal === "") {
-        setErrorMsg(password, 'password cannot be blank');
+        setErrorMsg(password, 'Password cannot be blank');
     } else if (passwordVal.length <= 7) {
-        setErrorMsg(password, 'min 8 char');
+        setErrorMsg(password, 'Username must have a minimum of 8 characters');
+    } else if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])/.test(passwordVal)) {
+        setErrorMsg(password, 'Include at least one capital letter, one lowercase letter, and a number');
     } else {
         setSuccessMsg(password);
     }
 
     // confirm password
     if (cpasswordVal === "") {
-        setErrorMsg(cpassword, 'confirm password cannot be blank');
+        setErrorMsg(cpassword, 'Confirm password cannot be blank');
     } else if (passwordVal != cpasswordVal) {
-        setErrorMsg(cpassword, 'Not Matched!');
+        setErrorMsg(cpassword, 'Your Passwords do not match!');
     } else {
         setSuccessMsg(cpassword);
     }
@@ -115,4 +125,3 @@ function setSuccessMsg(input) {
     const formControl = input.parentElement;
     formControl.className = "form-control success";
 }
-
