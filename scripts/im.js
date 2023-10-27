@@ -46,10 +46,10 @@ const urlParams = new URLSearchParams(window.location.search);
                         const posterElement = document.getElementById('movie-poster');
                         
                         if (posterURL) {
-                            posterElement.src = `'https://image.tmdb.org/t/p/w500/'${posterURL}`; 
+                            posterElement.src = 'https://image.tmdb.org/t/p/w500/' + posterURL; 
                         } else {
                             posterElement.src = '/assets/movie.jpg'; 
                         }
                     })
                     .catch(error => console.error('Error fetching movie poster:', error));
-            });
+            })

@@ -56,6 +56,7 @@ button {
 body, html {
   margin: 0;
   padding: 0;
+  background-color: #fff;
 }
 
 /* Create the header with a background image */
@@ -276,3 +277,6 @@ body, html {
 }
 
 
+.movie-info{
+  color: white ;
+}
