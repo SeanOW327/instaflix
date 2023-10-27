@@ -50,7 +50,6 @@ $(document).ready(function() {
 let watchListArray = [];
 
 let watchList = JSON.parse(localStorage.getItem('watchlist')) || [];
-console.log(watchList);
 
 for(let i = 0; i < watchList.length; i++){
     let movieResult;
@@ -76,7 +75,6 @@ for(let i = 0; i < watchList.length; i++){
 
 }
 
-console.log(watchListArray);
 
 
 // ---------------------------------------------------------------------------
@@ -97,7 +95,6 @@ const options = {
         genreArray = data;  
       })
     .catch(err => console.error(err));
-console.log(genreArray)
 
 // ---------------------------------------------------------------------------
 // Load movies

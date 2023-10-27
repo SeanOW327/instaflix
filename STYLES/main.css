@@ -210,10 +210,7 @@ a{
 }
 
 
-
-
-
- 
-
-  
-  
+.movie-synopsis{
+    max-width: 800px;
+    text-align: left;
+}
