@@ -57,21 +57,11 @@ a{
 /* ---------------------------------------- */
 /* Filters */
 
-#filter-form{
-    display: flex;
+.filter-buttons{
+    margin-top: 30px;
     justify-content: center;
-    align-items: center;
-    margin: 0;
     gap: 30px;
-    height: auto;
-    padding-top: 30px;
-}
 
-
-.form-select{
-    width: 175px;
-    font-size: 20px;
-    cursor: pointer;
 }
 
 .all-movies-btn{
