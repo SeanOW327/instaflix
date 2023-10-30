@@ -279,12 +279,23 @@ $(document).ready(function() {
 
     let movieFilterArray = [];
     
-    const apiCallPromise = fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1' + selectedYearValue + '&sort_by=popularity.desc' + selectedImdbScore + selectedGenreValue, options)
+    fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1' + selectedYearValue + '&sort_by=popularity.desc' + selectedImdbScore + selectedGenreValue, options)
       .then(response => response.json())
       .then(data => {
         for(let i = 0; i <data.results.length; i++){
             movieFilterArray.push(data.results[i]);
         }
+         
+    })
+      .catch(err => console.error(err));
+
+      const apiCallPromise = fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2' + selectedYearValue + '&sort_by=popularity.desc' + selectedImdbScore + selectedGenreValue, options)
+      .then(response => response.json())
+      .then(data => {
+        for(let i = 0; i <data.results.length; i++){
+            movieFilterArray.push(data.results[i]);
+        }
+        console.log()
          
     })
       .catch(err => console.error(err));
