@@ -239,15 +239,5 @@ $(document).ready(function() {
 
 
 
-  
-
-  
-
-
-
-
-
-
-
 
 
