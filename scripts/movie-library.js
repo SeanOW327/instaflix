@@ -182,7 +182,6 @@ $(document).ready(function() {
 // Add to watch list
   
 let watchList = JSON.parse(localStorage.getItem('watchlist')) || [];
-console.log(watchList)
 
 $(document).ready(function() {
 
@@ -226,7 +225,7 @@ $(document).ready(function() {
 
 
 // ---------------------------------------------------------------------------
-// Filter by genre
+// Filter
 
 $(document).ready(function() {
 
@@ -261,20 +260,16 @@ $(document).ready(function() {
     if(selectedGenre === ""){
     } else{
       selectedGenreValue = "&with_genres=" + selectedGenre;
-      console.log(selectedGenreValue)
     }
 
     if(selectedYear === ""){
     } else{
       selectedYearValue = "&primary_release_year=" + selectedYear;
-      console.log(selectedYearValue)
     }  
     
     if(selectedScore === ""){
     } else{
-      console.log(selectedScore)
-      selectedImdbScore = "&vote_average.gte=" + selectedYear;
-      console.log(selectedImdbScore)
+      selectedImdbScore = "&vote_average.gte=" + selectedScore;
     }  
 
 
@@ -284,18 +279,27 @@ $(document).ready(function() {
 
     let movieFilterArray = [];
     
-    const apiCallPromise = fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1' + selectedYearValue + '&sort_by=popularity.desc' + selectedImdbScore + selectedGenreValue, options)
+    fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=1' + selectedYearValue + '&sort_by=popularity.desc' + selectedImdbScore + selectedGenreValue, options)
       .then(response => response.json())
       .then(data => {
         for(let i = 0; i <data.results.length; i++){
             movieFilterArray.push(data.results[i]);
         }
-        console.log(movieFilterArray)
+         
+    })
+      .catch(err => console.error(err));
+
+      const apiCallPromise = fetch('https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2' + selectedYearValue + '&sort_by=popularity.desc' + selectedImdbScore + selectedGenreValue, options)
+      .then(response => response.json())
+      .then(data => {
+        for(let i = 0; i <data.results.length; i++){
+            movieFilterArray.push(data.results[i]);
+        }
+        console.log()
          
     })
       .catch(err => console.error(err));
   
-    console.log(apiCallPromise)
 
       function loadMovies() {
           
@@ -325,11 +329,10 @@ $(document).ready(function() {
         $(currentChild).find("#movie-title").text(movieFilterArray[i].original_title);
         $(currentChild).find("#movie-year").text(movieYear);
         $(currentChild).find("#movie-genres").text(lessGenres.join(", "));
-        $(currentChild).find("#review-avg").text(movieArray[i].vote_average);
+        $(currentChild).find("#review-avg").text(movieFilterArray[i].vote_average);
         $(currentChild).find("#movie-img").attr('src','https://image.tmdb.org/t/p/w500/' + movieFilterArray[i].poster_path);
         $(currentChild).find("#wishlist-button").attr("id", movieFilterArray[i].id);
         $(currentChild).find("#movie-title-link").attr("id", movieFilterArray[i].id);
-        console.log()
 
         
         
@@ -351,6 +354,3 @@ $(document).ready(function() {
   
 
 });
-
-
-
