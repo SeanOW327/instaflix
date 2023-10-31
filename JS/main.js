@@ -622,6 +622,18 @@ document.addEventListener('DOMContentLoaded', loadComingSoonMovies);
             });
 
 
+ 
+            
+            
+
+
+
+
+
+
+
+
+
             
 
 

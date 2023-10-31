@@ -41,7 +41,7 @@
           </ul>
       </div>
       <!-- Insert a Button on the Left -->
-      <button class="btn btn-primary ml-2" href="/pages/signin.html"  class="nav-link">Sign Out</button>
+      <a href="/pages/signin.html" class="btn btn-primary ml-2">Sign Out</a>
       
   </div>
 </nav>
@@ -84,40 +84,40 @@
           
           <h4>IN CINEMA</h4>
           <div class="headerDivider"></div>
-          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <!-- Background Image -->
-                    <img src="/assets/incinema.jpg" class="d-block w-100" alt="Background Image">
-        
-                    <!-- Movie Information Overlay -->
-                    <div class="carousel-caption d-none d-md-block text-left">
-                        <div class="row">
-                            <!-- Movie Poster -->
-                            <div class="col-md-6">
-                                <img src="/ASSETS/movie-poster.jfif" alt="Movie Poster" class="img-fluid" style="width: 300px;height: 410px;">
-                            </div>
-                            <!-- Movie Details -->
-                            <div class="col-md-6">
-                                <h2 style="color: #ffff;">
-                                <b>Movie Title</b></h2>
-                                <p class="text-left" style="color: #ffff;">Description of the movie goes here.</p>
-                                <p class="text-left" style="color: #ffff;">Genre: Action, Adventure</p>
-                                <div class="text-right">
-                                    <a href="#" class="btn btn-primary">View on Map</a>
-                                </div>
-                            </div>
-                        </div>
+          <div class="card text-center">
+            <div class="card-header">
+                Featured
+            </div>
+            <img src="/ASSETS/hunger game.jpg" class="card-img-top" alt="..." style="height: 500px;">
+            <div class="card-body">
+                <h2 class="card-title"><b>HUNGER GAMES: THE BALLAD OF SONGBIRDS AND SNAKES</b></h2>
+                <p class="card-text">Coriolanus Snow mentors and develops feelings for the female District 12 tribute during the 10th Hunger Games.</p>
+                <div class="d-flex justify-content-center"> <!-- Center align the buttons -->
+                    <div class="dropdown" style="margin-bottom: 20px;">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            View on Map
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57487.63371206366!2d28.163991658203127!3d-25.7713197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95610a34b12c93%3A0xb336d3b3ce8a229!2sSter-Kinekor!5e0!3m2!1sen!2sza!4v1698738179318!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Add more carousel items as needed -->
+                <a href="https://www.sterkinekor.com/" class="btn btn-outline-primary mx-auto" style="width: 60%;">View more movies in cinema/book tickets</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+                13:00pm,   18:00pm,   20:15pm
             </div>
         </div>
         
+
         
         
           
-          <h4>NEWS</h4>
+          <h4 style="margin-top: 40px;">NEWS</h4>
           <div class="headerDivider"></div>
           <div class="col-12 col-md-4 mb-3 px-12">
               <div class="card">
