@@ -10,7 +10,7 @@ let movieContainer = document.getElementById("movies-container");
       <svg width="10" height="2" viewBox="0 0 10 2" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect y="1.625" width="1.25" height="10" transform="rotate(-90 0 1.625)" fill="white"/>
       </svg>
-f      
+      
       </button>
       <div>
         <div class="image-container">
@@ -24,7 +24,7 @@ f
       </div>
       
       <div class="movie-card_info">
-        <a href=""> <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </a>
+      <div id="movie-title-link" class="movie-link"> <h4 id="movie-title" class="movie-name"> No Hard Feelings</h4> </div>
         <div class="movie-meta">
           <div id="movie-year">2021</div>
           <div class="pipe"></div>
@@ -128,6 +128,8 @@ function loadWatchList() {
 
             let movieYear = watchListArray[i].release_date.substring(0, 4);
 
+            
+
         let currentChild = $("#movies-container").children().eq(i + 1);
         $(currentChild).find("#movie-title").text(watchListArray[i].original_title);
         $(currentChild).find("#movie-year").text(movieYear);
@@ -135,11 +137,15 @@ function loadWatchList() {
         $(currentChild).find("#review-avg").text(watchListArray[i].vote_average);
         $(currentChild).find("#movie-img").attr('src','https://image.tmdb.org/t/p/w500/' + watchListArray[i].poster_path);
         $(currentChild).find("#wishlist-button").attr("id", watchListArray[i].id);
+        $(currentChild).find("#movie-title-link").attr("id", watchListArray[i].id);
       }
     }
 apiCallPromise.then(() => {
     loadWatchList();
-    console.log(genreArray)
+    $(document).on("click", ".movie-link", function(){
+      window.location.href = 'http://127.0.0.1:5501/pages/individualmovie.html?id=' + this.id;
+      
+    })
 });
 
    
@@ -187,10 +193,6 @@ apiCallPromise.then(() => {
 $(document).ready(function() {
     
 });
-
-
-// ---------------------------------------------------------------------------
-// Filter by genre
 
 
 

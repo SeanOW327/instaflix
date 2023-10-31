@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Movie Homepage</title>
 
+    <!-- External Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- Style sheets -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/STYLES/main.css">
@@ -15,32 +20,37 @@
     <!-- ------------------------------------------------------------------------------------------------------------------- -->
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #0F0F10;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="/ASSETS/LOGO 7.png" alt="Bootstrap" width="150" height="40">
-              </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-center " id="navbarNav" style="margin-left: -50px;">
-             <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/index.html" style="border-bottom: 2px solid #a4c9ba8d;color: white;">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/watchlist.html" style="color: #a4c9bab6;">Watchlist</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/pages/movie-library.html" style="color:#a4c9bab6 ;">Library</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" style="color:#a4c9bab6 ;">News</a>
-        </li>
-      </ul>
-          </div>
-        </div>
-      </nav>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg" style="background-color: #0F0F10;">
+  <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+          <img src="/ASSETS/LOGO 7.png" alt="Bootstrap" width="150" height="40">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center " id="navbarNav" style="margin-left: -50px;">
+          <ul class="nav">
+              <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="/index.html" style="border-bottom: 2px solid #a4c9ba8d;color: white;">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/pages/watchlist.html" style="color: #a4c9bab6;">Watchlist</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="/pages/movie-library.html" style="color:#a4c9bab6 ;">Library</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#" style="color:#a4c9bab6 ;">News</a>
+              </li>
+          </ul>
+      </div>
+      <!-- Insert a Button on the Left -->
+      <a href="/pages/signin.html" class="btn btn-primary ml-2">Sign Out</a>
+      
+  </div>
+</nav>
+
     
     
 
@@ -64,7 +74,7 @@
             <h4>Top-Rated</h4>
             <div class="headerDivider"></div>
             <div id="top-rated-movies-container" class="row movies-list">
-                <!-- Top-Rated Movie cards will be added here -->
+                
             </div>
             
             <h4>COMING SOON</h4>
@@ -79,40 +89,40 @@
           
           <h4>IN CINEMA</h4>
           <div class="headerDivider"></div>
-          <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <!-- Background Image -->
-                    <img src="/assets/incinema.jpg" class="d-block w-100" alt="Background Image">
-        
-                    <!-- Movie Information Overlay -->
-                    <div class="carousel-caption d-none d-md-block text-left">
-                        <div class="row">
-                            <!-- Movie Poster -->
-                            <div class="col-md-6">
-                                <img src="/ASSETS/movie-poster.jfif" alt="Movie Poster" class="img-fluid" style="width: 300px;height: 410px;">
-                            </div>
-                            <!-- Movie Details -->
-                            <div class="col-md-6">
-                                <h2 style="color: #ffff;">
-                                <b>Movie Title</b></h2>
-                                <p class="text-left" style="color: #ffff;">Description of the movie goes here.</p>
-                                <p class="text-left" style="color: #ffff;">Genre: Action, Adventure</p>
-                                <div class="text-right">
-                                    <a href="#" class="btn btn-primary">View on Map</a>
-                                </div>
-                            </div>
-                        </div>
+          <div class="card text-center">
+            <div class="card-header">
+                Featured
+            </div>
+            <img src="/ASSETS/hunger game.jpg" class="card-img-top" alt="..." style="height: 500px;">
+            <div class="card-body">
+                <h2 class="card-title">HUNGER GAMES: THE BALLAD OF SONGBIRDS AND SNAKES</h2>
+                <p class="card-text">Coriolanus Snow mentors and develops feelings for the female District 12 tribute during the 10th Hunger Games.</p>
+                <div class="d-flex justify-content-center"> <!-- Center align the buttons -->
+                    <div class="dropdown" style="margin-bottom: 20px;">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            View on Map
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57487.63371206366!2d28.163991658203127!3d-25.7713197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e95610a34b12c93%3A0xb336d3b3ce8a229!2sSter-Kinekor!5e0!3m2!1sen!2sza!4v1698738179318!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                </a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Add more carousel items as needed -->
+                <a href="https://www.sterkinekor.com/" class="btn btn-outline-primary mx-auto" style="width: 60%;">View more movies in cinema/book tickets</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+                13:00pm,   18:00pm,   20:15pm
             </div>
         </div>
         
+
         
         
           
-          <h4>NEWS</h4>
+          <h4 style="margin-top: 40px;">NEWS</h4>
           <div class="headerDivider"></div>
           <div class="col-12 col-md-4 mb-3 px-12">
               <div class="card">
