@@ -101,3 +101,18 @@ function setSuccessMsg(input) {
     const formControl = input.parentElement;
     formControl.className = "form-control success";
 }
+
+
+document.getElementById("form").onsubmit = function (e) {
+    e.preventDefault(); // Prevent the default form submission behavior
+
+    // Perform form validation and submission logic here
+    // For simplicity, let's assume the form is always valid
+
+    // Display a success message
+    // alert( usernameVal +"Form submitted successfully!");
+   
+    alert ("Hi "+document.getElementById('username').value + " welcome back to Instastream")
+    // Redirect to the home page (replace 'home.html' with your actual home page URL)
+    window.location.href = "/index.html";
+};
