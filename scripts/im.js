@@ -17,7 +17,7 @@ const genreCallPromise = fetch('https://api.themoviedb.org/3/genre/movie/list?la
       let genreArrayData = data;
       genreArray = genreArrayData.genres;
     })
-  .catch(err => console.error(err));
+  .catch(err => console.error(err)); 
 
 
 const urlParams = new URLSearchParams(window.location.search);
@@ -77,3 +77,12 @@ const urlParams = new URLSearchParams(window.location.search);
             //         })
             //         .catch(error => console.error('Error fetching movie poster:', error));
             // })
+
+            username = localStorage.getItem("username");
+            
+            if (!username) {
+              alert("Please sign in!")
+              window.location.href = 'http://127.0.0.1:5501/pages/signin.html'; 
+            } else {
+              document.getElementById("username").textContent = username;
+            }
