@@ -111,8 +111,9 @@ document.getElementById("form").onsubmit = function (e) {
 
     // Display a success message
     // alert( usernameVal +"Form submitted successfully!");
-   
-    alert ("Hi "+document.getElementById('username').value + " welcome back to Instastream")
+    let userName = document.getElementById('username').value;
+    alert ("Hi "+ userName + ", welcome back to Instastream")
+    localStorage.setItem("username", userName);
     // Redirect to the home page (replace 'home.html' with your actual home page URL)
     window.location.href = "/index.html";
 };
