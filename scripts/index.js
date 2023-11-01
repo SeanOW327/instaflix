@@ -134,3 +134,13 @@ document.getElementById("form").onsubmit = function (e) {
     // Redirect to the home page (replace 'home.html' with your actual home page URL)
     window.location.href = "/index.html";
 };
+
+
+username = localStorage.getItem("username");
+
+if (!username) {
+    alert("Please sign in!")
+    window.location.href = 'http://127.0.0.1:5501/pages/signin.html'; 
+  } else {
+    document.getElementById("username").textContent = username;
+  }
