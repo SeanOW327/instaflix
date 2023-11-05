@@ -181,6 +181,17 @@ apiCallPromise.then(() => {
     
   });
 
+
+  $(document).on("click", "#clearButton", function() {
+        watchList = [];
+        localStorage.setItem('watchlist', JSON.stringify(watchList));
+        alert("Watch list has been cleared!")
+        loadWatchList()
+        location.reload();
+      
+    
+  });
+
 }); // close document ready
 
 
