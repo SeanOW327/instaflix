@@ -140,7 +140,7 @@ function loadWatchList() {
 apiCallPromise.then(() => {
     loadWatchList();
     $(document).on("click", ".movie-link", function(){
-      window.location.href = 'http://127.0.0.1:5501/pages/individualmovie.html?id=' + this.id;
+      window.location.href = 'http://127.0.0.1:5502/individualmovie.html?id=' + this.id;
       
     })
 });
@@ -178,6 +178,17 @@ apiCallPromise.then(() => {
         loadWatchList()
         location.reload();
       });
+    
+  });
+
+
+  $(document).on("click", "#clearButton", function() {
+        watchList = [];
+        localStorage.setItem('watchlist', JSON.stringify(watchList));
+        alert("Watch list has been cleared!")
+        loadWatchList()
+        location.reload();
+      
     
   });
 
@@ -236,5 +247,11 @@ $(document).ready(function() {
 
 
 
+  username = localStorage.getItem("username");
 
-
+  if (!username) {
+    alert("Please sign in!")
+    window.location.href = 'http://127.0.0.1:5502/pages/signin.html'; 
+  } else {
+    document.getElementById("username").textContent = username;
+  }

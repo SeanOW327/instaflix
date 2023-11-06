@@ -122,7 +122,7 @@ function setSuccessMsg(input) {
 // document.getElementById("form").onsubmit = function (e) {
 //     e.preventDefault(); 
 
-//     //    alert ("Hi "+document.getElementById('username').value + ", You are now registered, welcome to Instastream")
-    
+//        alert ("Hi "+document.getElementById('username').value + ", You are now registered, welcome to Instastream")
+//     // Redirect to the home page (replace 'home.html' with your actual home page URL)
 //     window.location.href = "/index.html";
 // };

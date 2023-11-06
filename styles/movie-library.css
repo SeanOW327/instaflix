@@ -64,9 +64,18 @@ a{
     align-items: center;
     justify-content: center;
     height: auto;
+    width: 200pxpx;
+    flex-wrap: wrap;
 }
 
-.filter-buttons{
+.form-select {
+    font-size: 20px;
+    cursor: pointer;
+    width: 100vw;
+    max-width: 175px;
+  }
+  
+  .filter-buttons{
     margin-top: 30px;
     justify-content: center;
     align-items: center;
@@ -74,19 +83,14 @@ a{
     gap: 30px;
     height: auto;
     padding-top: 30px;
-}
-
-
-.form-select{
-    width: 175px;
-    font-size: 20px;
-    cursor: pointer;
-}
+  }
+  
 
 .all-movies-btn{
+    width: 100%;
+    max-width: 175px;
     display: flex;
     padding: 5px 20px;
-    width: 175px;
     justify-content: center;
     align-items: center;
     border-radius: 5px;
@@ -94,10 +98,6 @@ a{
     border: #818489 solid 2px;
     font-size: 20px;
     color: white;
-}
-
-.form-select {
-    width: 175px;
 }
 
 .all-movies-active{
@@ -116,19 +116,6 @@ a{
 .dropdown{
     width: 175px;
     padding: 0;
-}
-
-.filter-button{
-    display: flex;
-    padding: 5px 20px;
-    width: 175px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
-    background: transparent;
-    border: #818489 solid 2px;
-    font-size: 20px;
-    color: white;
 }
 
 /* ---------------------------------------- */
