@@ -81,6 +81,7 @@ $.ajax({
                 $carouselItem.addClass('active');
             }
 
+
             // Set the movie background image
             $carouselItem.append('<img src="https://image.tmdb.org/t/p/w1920_and_h800_multi_faces' + movie.backdrop_path + '" class="d-block w-100" alt="' + movie.title + '">');
             $carouselItem.append('<div style="position: absolute; top: 0; left: 0; height: 100%; width: 100%; background-color: rgba(0, 0, 0, 0.5);"></div>');
@@ -88,13 +89,12 @@ $.ajax({
             // Create a carousel caption with movie details
             var $carouselCaption = $('<div class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100"></div>');
             $carouselCaption.append('<h1 class="text-white">' + movie.title + '</h1>');
-            $carouselCaption.append('<p class="text-white">' + movie.overview + '</p>');
+            $carouselCaption.append('<p class="text-white movie-synopsis">' + movie.overview + '</p>');
             $carouselCaption.append('<div class="d-flex justify-content-between">');
-            $carouselCaption.find('.d-flex').append('<button id=" ' + movie.id + '" class="btn btn-primary mx-1 watch-now-btn">Watch now</button>');
-            $carouselCaption.find('.d-flex').append('<button id=" ' + movie.id + '" class="btn btn-primary1 mx-1 add-to-watchlist">Add to Watchlist</button>'); //attach movie id to watch list button
+            $carouselCaption.find('.d-flex').append('<button id="' + movie.id + '" class="btn btn-primary mx-1 watch-now-btn">Watch now</button>');
+            $carouselCaption.find('.d-flex').append('<button id="' + movie.id + '" class="btn btn-primary1 mx-1 add-to-watchlist">Add to Watchlist</button>'); //attach movie id to watch list button
             $carouselCaption.append('<p class="text-viewer">Viewer Rating: ' + movie.vote_average + '</p');
-
-
+            
 
             // Append the caption to the carousel item
             $carouselItem.append($carouselCaption);
@@ -621,27 +621,16 @@ document.addEventListener('DOMContentLoaded', loadComingSoonMovies);
                 console.error('Error fetching movie data:', error);
             });
 
-
-            
-
-
+// ---------------------------------------------------------
+// Display username
 
 
 
+username = localStorage.getItem("username");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+if (!username) {
+  alert("Please sign in!")
+  window.location.href = 'http://127.0.0.1:5501/pages/signin.html'; 
+} else {
+  document.getElementById("username").textContent = username;
+}

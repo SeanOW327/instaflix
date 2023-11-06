@@ -50,7 +50,6 @@ $(document).ready(function() {
 let watchListArray = [];
 
 let watchList = JSON.parse(localStorage.getItem('watchlist')) || [];
-console.log(watchList);
 
 for(let i = 0; i < watchList.length; i++){
     let movieResult;
@@ -76,7 +75,6 @@ for(let i = 0; i < watchList.length; i++){
 
 }
 
-console.log(watchListArray);
 
 
 // ---------------------------------------------------------------------------
@@ -97,7 +95,6 @@ const options = {
         genreArray = data;  
       })
     .catch(err => console.error(err));
-console.log(genreArray)
 
 // ---------------------------------------------------------------------------
 // Load movies
@@ -184,6 +181,17 @@ apiCallPromise.then(() => {
     
   });
 
+
+  $(document).on("click", "#clearButton", function() {
+        watchList = [];
+        localStorage.setItem('watchlist', JSON.stringify(watchList));
+        alert("Watch list has been cleared!")
+        loadWatchList()
+        location.reload();
+      
+    
+  });
+
 }); // close document ready
 
 
@@ -239,5 +247,11 @@ $(document).ready(function() {
 
 
 
+  username = localStorage.getItem("username");
 
-
+  if (!username) {
+    alert("Please sign in!")
+    window.location.href = 'http://127.0.0.1:5501/pages/signin.html'; 
+  } else {
+    document.getElementById("username").textContent = username;
+  }

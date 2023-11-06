@@ -280,3 +280,51 @@ body, html {
 .movie-info{
   color: white ;
 }
+
+.movie-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.movie-poster {
+  flex: 1;
+}
+.movie-details {
+  flex: 2;
+  padding: 20px;
+}
+.movie-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+.movie-info {
+  margin-top: 10px;
+}
+.movie-info label {
+  font-weight: bold;
+}
+
+.trailer {
+  flex: 1;
+}
+
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  text-decoration: none;
+  color: #333;
+  background-color: #ddd;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #555;
+  color: #fff;
+}

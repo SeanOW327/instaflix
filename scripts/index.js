@@ -23,15 +23,15 @@ const sendData = (usernameVal, lastnameVal, emailVal, passwordVal, sRate, Count)
        
         localStorage.setItem('userData', JSON.stringify(userData));
 
-        swal({
-            title: "Success",
-            text: "Hello " + usernameVal + ", you are registered!",
-            icon: "success",
-            button: "Go to Home",
-        }).then(() => {
+        // swal({
+        //     title: "Success",
+        //     text: "Hello " + usernameVal + ", you are registered!",
+        //     icon: "success",
+        //     button: "Go to Home",
+        // }).then(() => {
             
-            window.location.href = "index.html";
-        });
+        //     window.location.href = "index.html";
+        // });
     }
 };
 
@@ -125,3 +125,22 @@ function setSuccessMsg(input) {
     const formControl = input.parentElement;
     formControl.className = "form-control success";
 }
+
+// ALERT TO REDIRECT
+document.getElementById("form").onsubmit = function (e) {
+    e.preventDefault(); 
+
+       alert ("Hi "+document.getElementById('username').value + ", You are now registered, welcome to Instastream")
+    // Redirect to the home page (replace 'home.html' with your actual home page URL)
+    window.location.href = "/index.html";
+};
+
+
+username = localStorage.getItem("username");
+
+if (!username) {
+    alert("Please sign in!")
+    window.location.href = 'http://127.0.0.1:5501/pages/signin.html'; 
+  } else {
+    document.getElementById("username").textContent = username;
+  }
