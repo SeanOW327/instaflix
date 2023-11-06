@@ -115,7 +115,7 @@ $.ajax({
         // Navigate to individual movie page
         
         $(document).on("click", ".watch-now-btn", function(){
-          window.location.href = 'http://127.0.0.1:5501/pages/individualmovie.html?id=' + this.id;
+          window.location.href = 'http://127.0.0.1:5502/individualmovie.html?id=' + this.id;
           
         })
 
@@ -476,7 +476,7 @@ function loadTopRatedMovies() {
 // Navigate to individual movie page
 
 $(document).on("click", ".movie-link", function(){
-  window.location.href = 'http://127.0.0.1:5501/pages/individualmovie.html?id=' + this.id;
+  window.location.href = 'http://127.0.0.1:5502/individualmovie.html?id=' + this.id;
   
 })
 
@@ -630,7 +630,7 @@ username = localStorage.getItem("username");
 
 if (!username) {
   alert("Please sign in!")
-  window.location.href = 'http://127.0.0.1:5501/pages/signin.html'; 
+  window.location.href = 'http://127.0.0.1:5502/pages/signin.html'; 
 } else {
   document.getElementById("username").textContent = username;
 }
