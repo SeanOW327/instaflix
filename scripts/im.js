@@ -89,7 +89,6 @@ const urlParams = new URLSearchParams(window.location.search);
 
             // movie details
 const apiKey = '36d3716b309f66d8de33fabd0f6aa6c9';
-const movieId = '507089'; 
 const tmdbUrl = `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
 
 fetch(tmdbUrl)
@@ -122,8 +121,8 @@ fetch(tmdbUrl)
 
 
   //movie poster URL from the query parameter -- >
-const urlParams = new URLSearchParams(window.location.search);
-const posterUrl = urlParams.get('poster');
+const urlpParams = new URLSearchParams(window.location.search);
+const posterUrl = urlpParams.get('poster');
 
 
 const headerPosterElement = document.getElementById('header-poster');
