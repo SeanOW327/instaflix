@@ -29,8 +29,8 @@
 
 <p><b>Author's:</b></p>
 <p>-CARISSA CLAASSENS:231016@virtualwindow.co.za <p/>
-<p>-ZAHRA CASSIMJEE:231016@virtualwindow.co.za <p/>
-<p>-SEAN MAKURA:231016@virtualwindow.co.za <p/>
+<p>-ZAHRA CASSIMJEE:231131@virtualwindow.co.za <p/>
+<p>-SEAN MAKURA:231327@virtualwindow.co.za <p/>
 <p>-DHIALI CHETTY:231016@virtualwindow.co.za <p/>
 <p><b>Licence</b></p>
 <p>Distributed under the MIT Licence</p>
