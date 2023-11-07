@@ -11,6 +11,8 @@
 <p><a href="Sean add the video link here">Click to View</a></p>
 <p>The Above linked file is our Demonstration Video of our website</p>
 
+<p><b>The different pages</b></p>
+
 <p><b>Author's:</b></p>
 <p>-CARISSA CLAASSENS:231016@virtualwindow.co.za <p/>
 <p>-ZAHRA CASSIMJEE:231016@virtualwindow.co.za <p/>
@@ -28,5 +30,9 @@
 <p><a href="https://www.themoviedb.org/">TMDB</a></p>
 
 <p>And thank you to the Lecturers!</p>
+
+
+<p><b>Readme file Author:</b></p>
+<p>CARISSA CLAASSENS:231016@virtualwindow.co.za</p>
 
 
