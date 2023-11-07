@@ -43,10 +43,10 @@
 <p><a href="https://www.figma.com/files/recents-and-sharing?fuid=1210213159815880574">Figma</a></p>
 <p><a href="https://www.themoviedb.org/">TMDB</a></p>
 
-<p>And thank you to the Lecturers!</p>
-
 
 <p><b>Readme file Author:</b></p>
 <p>CARISSA CLAASSENS:231016@virtualwindow.co.za</p>
+
+<h1><b>And thank you to the Lecturers!</b></h1>
 
 
