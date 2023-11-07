@@ -59,36 +59,7 @@ body, html {
   background-color: #fff;
 }
 
-/* Create the header with a background image */
-.header {
-  position: relative; 
-  background-image: url('assets/movie.jpg'); 
-  background-size: cover;
-  background-position: center;
-  height: 100vh; 
-  color: #000000; 
-  opacity: 0.8; 
-}
 
-/* Style the content inside the header */
-.header-content {
-  background-color: rgba(248, 245, 245, 0.9); 
-  padding: 20px;
-  border-radius: 10px; 
-  position: absolute; 
-  bottom: 100px;
-  left: 40px; 
-}
-
-.header-content h1 {
-  font-size: 36px;
-  margin: 0;
-}
-
-.header-content p {
-  font-size: 18px;
-  margin: 0;
-}
 
 
 .buttons {
@@ -229,7 +200,7 @@ body, html {
   padding: 0.5rem;
   border-radius: 3px;
 }
-.movie-info .plot{
+.movie-info .synopsis{
   max-width: 400px;
   margin: 1rem auto;
 }
@@ -318,7 +289,148 @@ a {
   text-align: center;
   margin: 20px;
   text-decoration: none;
-  color: #333;
+  color: #fffbfb;
+  background-color: #080808;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+a:hover {
+  background-color: #555;
+  color: #fff;
+}
+
+
+
+/* Modify your existing header styles */
+/* Modify your existing header styles */
+.header {
+  position: relative;
+  background-image: url('https://image.tmdb.org/t/p/w500/'); /* Replace with the URL of your header image */
+  background-size: cover; /* Cover the entire header with the background image */
+  background-position: center center; /* Center the background image horizontally and vertically */
+  height: 50vh; /* Adjust the height to 50% of the viewport height (50vh) */
+  color: #f6f5f5;
+  opacity: 0.8;
+}
+
+
+/* No need for these styles as they are not used */
+#banner {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+#poster {
+  max-width: 100%;
+  height: 20vh; /* Adjust the height as needed */
+}
+
+#title {
+  font-size: 2rem;
+  margin-top: 20px;
+}
+
+.movie-details{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Adjust background opacity as needed */
+  z-index: 2; /* Set a higher z-index to place it on top of the header */
+}
+
+/* Style your movie info as needed, e.g., add padding, font size, etc. */
+.movie-info {
+  padding: 420px;
+  font-size: 18px;
+}
+
+.trailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -350px; /* Move the trailer up by 350px */
+}
+
+/* Set the max width for the iframe to prevent overflow */
+.trailer iframe {
+  max-width: 100%;
+}
+
+/* CSS for styling the "Add to Watchlist" button */
+/* Center-align and move up the "Add to Watchlist" button */
+.watchlist-button {
+  background-color: #007bff; /* Blue background color */
+  color: #fff; /* White text color */
+  padding: 10px 20px; /* Padding around the text */
+  border: none; /* Remove button border */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  
+  margin-top: -350px; /* Move the trailer up by 35
+  display: block; /* Make the button a block element for centering */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.watchlist-button:hover {
+  background-color: #0056b3; /* Darker blue background color on hover */
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #333;
+  color: #9d1a1a;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#movie-title {
+  margin: 20px;
+}
+
+#movie-poster {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#movie-poster-detail {
+  max-width: 100%;
+  height: auto;
+}
+
+.movie-info {
+  flex: 1;
+}
+
+a {
+  display: block;
+  text-align: center;
+  margin: 20px;
+  text-decoration: none;
+  color: #000000;
   background-color: #ddd;
   padding: 10px 20px;
   border-radius: 5px;
@@ -328,3 +440,4 @@ a:hover {
   background-color: #555;
   color: #fff;
 }
+
