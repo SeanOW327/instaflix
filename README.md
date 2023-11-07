@@ -20,7 +20,7 @@
 <p>Distributed under the MIT Licence</p>
 
 <p><b>Team Project Link</b></p>
-<p>-Project Link:<a href="https://github.com/Carissa03-boop/T3DvFinalP231016.git">ProjectLink</a></p>
+<p>-Project Link:<a href="https://github.com/SeanOW327/instaflix.git">ProjectLink</a></p>
 
 <p><b>Acknowledgements</b></p>
 <p><a href="https://www.w3schools.com/jquery/jquery_animate.asp">ww3schools</a></p>
