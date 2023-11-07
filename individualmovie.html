@@ -46,50 +46,32 @@
       </div>
     </nav>
     
- 
-   
-        <header class="header">
-          <img id="movie-poster" src="" alt="Movie Poster">
-            <div class="header-content">
-                <h1>Love again</h1>
-                <br>
-              <p>Taking a deeply personal look at the most romantic movie as its characters tour the world.</p>
-                <div class="buttons">
-                  <a href="#" class="watch-now-button">Watch Now</a>
-                  <a href="#" class="watch-list-button">Add to watch List</a>
-              </div>
-            </div>
-        </header>
- 
+    <header>
+      <img id="header-poster" alt="Header Poster">
+      <h1 id="movie-title"></h1>
+  </header>
   
-        <div class="container">
-          <div class="result-container">
-            <div class="result-grid" id="result-grid">
-              <div class="movie-container"> 
-                <div class="movie-poster">
-                  <img src="/assets/movie.jpg" alt="movie poster">
-                </div>
-                <div class="movie-info" id="movie-info">
-                  <h3 class="movie-title">Love Again</h3>
-                  <ul class="movie-misc-info">
-                    <li class="year">Year: 2017</li>
-                    <li class="rated">Ratings: PG-13</li>
-                  </ul>
-                  <p class="genre"><b>Genre:</b> Action, Adventure, Comedy</p>
-                  <p class="plot"><b>Plot:</b> The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father the ambitious celestial being Ego.</p>
-                  <p class="actors"><b>Actors: </b>Chris Pratt, Zoe Saldana, Dave Bautista</p>
-                  <p class="writer"><b>Directors:</b> James Gunn, Don Abnett, Andy Lanning</p>
-                  <div class="buttons">
-                    <button class="play-trailer-button">Play Trailer</button>
-                    <button class="location-button">Location</button>
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
+   
+    <div class="movie-container">
+      <div class="movie-poster">
+          <img id="poster" src="" alt="Movie Poster">
+      </div>
+      <div class="movie-details">
+          <h1 class="movie-title" id="title"></h1>
+          <div class="movie-info">
+              <label>Director: </label><span id="director"></span><br>
+              <label>Actors: </label><span id="actors"></span><br>
+              <label>Synopsis: </label><p id="synopsis"></p><br>
+              <label>Viewer Rating: </label><span id="rating"></span><br>
+              <label>Year: </label><span id="year"></span><br>
+              <label>Box Office: </label><span id="box-office"></span><br>
           </div>
-        </div>
-        
+      </div>
+  </div>
+
+  <div class="trailer">
+    <iframe id="trailer" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+</div>
         
 
         <div class="footer-divider">
@@ -158,7 +140,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="../scripts/im.js"></script>
+    <script src="../scripts/im.js"></script> <script src="script.js"></script>
 
   </body>
 </html>
