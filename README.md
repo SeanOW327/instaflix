@@ -5,13 +5,27 @@
 
 <b>Development:</b>
 
-<p>In this project we collaborated as a team and split up the work to make the movie streaming site. It was quite exciting as this is the first team project that we have done. Getting team members's insights when we were working on the site aided us in getting different viewpoints and easily spot what we could improve on.This term we all agree that our teamwork skills were put to the test and we touched on communicating on a clear level, making your code structured and easy to read, and learnig how to split up work in a innovative way. </p>
+<p>In this project we collaborated as a team and split up the work to make the movie streaming site. It was quite exciting as this is the first team project that we have done. Getting team members's insights when we were working on the site aided us in getting different viewpoints and easily spot what we could improve on.This term we all agree that our teamwork skills were put to the test and we touched on communicating on a clear level, making your code structured and easy to read, and learing how to split up work in a innovative way. </p>
 
 <b>Our Team's Video Demonstration</b>
 <p><a href="Sean add the video link here">Click to View</a></p>
 <p>The Above linked file is our Demonstration Video of our website</p>
 
-<p><b>The different pages</b></p>
+<p><b>The different pages:</b></p>
+<p><b>Sign In:</b></p>
+<img src="/ASSETS/Sign in page.png" alt="Image Description">
+<p><b>Home page:</b></p>
+<img src="/ASSETS/Home 1.png" alt="Image Description">
+<img src="/ASSETS/home 2.png" alt="Image Description">
+<img src="/ASSETS/home 3.png" alt="Image Description">
+<img src="/ASSETS/home 5.png" alt="Image Description">
+<img src="/ASSETS/home 6.png" alt="Image Description">
+<p><b>Library page:</b></p>
+<img src="/ASSETS/library.png" alt="Image Description">
+<img src="/ASSETS/library 2.png" alt="Image Description">
+<p><b>Individual movie page:</b></p>
+<img src="/ASSETS/individual movie.png" alt="Image Description">
+
 
 <p><b>Author's:</b></p>
 <p>-CARISSA CLAASSENS:231016@virtualwindow.co.za <p/>
