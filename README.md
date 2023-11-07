@@ -8,7 +8,7 @@
 <p>In this project we collaborated as a team and split up the work to make the movie streaming site. It was quite exciting as this is the first team project that we have done. Getting team members's insights when we were working on the site aided us in getting different viewpoints and easily spot what we could improve on.This term we all agree that our teamwork skills were put to the test and we touched on communicating on a clear level, making your code structured and easy to read, and learing how to split up work in a innovative way. </p>
 
 <b>Our Team's Video Demonstration</b>
-<p><a href="Sean add the video link here">Click to View</a></p>
+<p><a href="https://drive.google.com/file/d/1ZZKdmz01VWuQf86xX6PG7tIF9uS2X_g5/view?usp=drive_link">Click to View</a></p>
 <p>The Above linked file is our Demonstration Video of our website</p>
 
 <p><b>The different pages:</b></p>

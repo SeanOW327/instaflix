@@ -169,7 +169,7 @@ $(document).ready(function() {
         // Navigate to individual movie page
         
         $(document).on("click", ".movie-link", function(){
-          window.location.href = 'http://127.0.0.1:5502/individualmovie.html?id=' + this.id;
+          window.location.href = '../individualmovie.html?id=' + this.id;
           
         })
         
@@ -360,7 +360,7 @@ username = localStorage.getItem("username");
 
 if (!username) {
   alert("Please sign in!")
-  window.location.href = 'http://127.0.0.1:5502/pages/signin.html'; 
+  window.location.href = '../pages/signin.html'; 
 } else {
   document.getElementById("username").textContent = username;
 }
